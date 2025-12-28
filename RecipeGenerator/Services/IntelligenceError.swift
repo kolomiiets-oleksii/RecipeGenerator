@@ -1,10 +1,18 @@
 import Foundation
 import FoundationModels
 
-enum IntelligenceError: Error, LocalizedError {
-        case modelUnavailable(SystemLanguageModel.Availability.UnavailableReason)
+// MARK: - Intelligence Error
 
-        var errorDescription: String {
+/// Errors that can occur when interacting with the on-device language model.
+enum IntelligenceError: Error, LocalizedError {
+
+    /// The language model is not available on this device.
+    /// - Parameter reason: The specific reason why the model is unavailable.
+    case modelUnavailable(SystemLanguageModel.Availability.UnavailableReason)
+
+    // MARK: - LocalizedError
+
+    var errorDescription: String {
             switch self {
             case .modelUnavailable(let reason):
                 switch reason {

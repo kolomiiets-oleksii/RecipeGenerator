@@ -1,10 +1,24 @@
 import SwiftUI
 
+// MARK: - Idle State View
+
+/// The initial view where users enter their ingredients.
+///
+/// Displays an animated fork and knife icon with a text input field
+/// for entering comma-separated ingredients.
 struct IdleStateView: View {
+
+    // MARK: - Bindings
+
     @Binding var text: String
+
+    // MARK: - State
+
     @State private var isAnimating = false
     @State private var iconScale = 1.0
     @State private var textFieldGlow = 0.0
+
+    // MARK: - Body
 
     var body: some View {
         List {
@@ -87,6 +101,9 @@ struct IdleStateView: View {
     }
 }
 
+// MARK: - Feature Card
+
+/// A reusable card component for displaying feature highlights.
 struct FeatureCard: View {
     let icon: String
     let title: String
