@@ -10,6 +10,7 @@ import Testing
 
 // MARK: - Generating State Tests
 
+@MainActor
 @Suite("GeneratingState Tests")
 struct GeneratingStateTests {
 

@@ -48,7 +48,6 @@
     "OnlyOneTrailingClosureArgument": true,
     "OrderedImports": true,
     "ReplaceForEachWithForLoop": true,
-    "ReturnVoid": true,
     "UseEarlyExits": false,
     "UseLetInEveryBoundCaseVariable": true,
     "UseShorthandTypeNames": true,

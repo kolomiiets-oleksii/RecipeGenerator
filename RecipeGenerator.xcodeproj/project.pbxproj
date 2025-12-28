@@ -107,6 +107,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				537E73AE2F01458900640C7C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				53948C1E2E60544600A9D58E /* RecipeGenerator */,
@@ -126,7 +127,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2600;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					538795192E786B380016EDAB = {
 						CreatedOnToolsVersion = 26.0;
@@ -146,6 +147,9 @@
 			);
 			mainGroup = 53948C132E60544600A9D58E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				537E73AC2F01457300640C7C /* XCRemoteSwiftPackageReference "SwiftFormatLintPlugin" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 53948C1D2E60544600A9D58E /* Products */;
 			projectDirPath = "";
@@ -192,6 +196,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		537E73AE2F01458900640C7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 537E73AD2F01458900640C7C /* Lint */;
+		};
 		5387951F2E786B380016EDAB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 53948C1B2E60544600A9D58E /* RecipeGenerator */;
@@ -281,6 +289,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 44H75889S4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -304,6 +313,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -343,6 +353,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 44H75889S4;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -359,6 +370,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -370,6 +382,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 44H75889S4;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -415,6 +428,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 44H75889S4;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -484,6 +498,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		537E73AC2F01457300640C7C /* XCRemoteSwiftPackageReference "SwiftFormatLintPlugin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Snapp-Mobile/SwiftFormatLintPlugin";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		537E73AD2F01458900640C7C /* Lint */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 537E73AC2F01457300640C7C /* XCRemoteSwiftPackageReference "SwiftFormatLintPlugin" */;
+			productName = "plugin:Lint";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 53948C142E60544600A9D58E /* Project object */;
 }

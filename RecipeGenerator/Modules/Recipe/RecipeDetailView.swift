@@ -33,7 +33,9 @@ struct RecipeDetailView: View {
                 if let ingredients = recipe.ingredients, !ingredients.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
                         let ingredientList = ingredients.components(separatedBy: ",")
-                        ForEach(Array(ingredientList.enumerated()), id: \.offset) { index, ingredient in
+                        ForEach(Array(ingredientList.enumerated()), id: \.offset) {
+                            index,
+                            ingredient in
                             HStack(alignment: .top, spacing: 8) {
                                 Text("•")
                                     .foregroundColor(.blue)
@@ -41,7 +43,10 @@ struct RecipeDetailView: View {
                                     .opacity(appearAnimation ? 1 : 0)
                                     .offset(x: appearAnimation ? 0 : -20)
                                     .animation(
-                                        .spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + Double(index) * 0.1),
+                                        .spring(
+                                            response: 0.6,
+                                            dampingFraction: 0.8
+                                        ).delay(sectionDelay + Double(index) * 0.1),
                                         value: appearAnimation
                                     )
 
@@ -50,7 +55,10 @@ struct RecipeDetailView: View {
                                     .opacity(appearAnimation ? 1 : 0)
                                     .offset(x: appearAnimation ? 0 : -20)
                                     .animation(
-                                        .spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + Double(index) * 0.1),
+                                        .spring(
+                                            response: 0.6,
+                                            dampingFraction: 0.8
+                                        ).delay(sectionDelay + Double(index) * 0.1),
                                         value: appearAnimation
                                     )
                             }
@@ -66,7 +74,10 @@ struct RecipeDetailView: View {
                 .font(.headline)
                 .opacity(appearAnimation ? 1 : 0)
                 .offset(y: appearAnimation ? 0 : 20)
-                .animation(.spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + 0.3), value: appearAnimation)
+                .animation(
+                    .spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + 0.3),
+                    value: appearAnimation
+                )
             }
 
             if let steps = recipe.steps, !steps.isEmpty {
@@ -74,7 +85,9 @@ struct RecipeDetailView: View {
                     let stepList = steps.components(separatedBy: ".").filter { Int($0) == nil }.filter {
                         !$0.trimmingCharacters(in: .whitespaces).isEmpty
                     }
-                    ForEach(Array(stepList.enumerated()), id: \.offset) { index, step in
+                    ForEach(Array(stepList.enumerated()), id: \.offset) {
+                        index,
+                        step in
                         HStack(alignment: .top, spacing: 12) {
                             Text("\(index + 1)")
                                 .font(.headline)
@@ -86,7 +99,10 @@ struct RecipeDetailView: View {
                                 .opacity(appearAnimation ? 1 : 0)
                                 .scaleEffect(appearAnimation ? 1 : 0.5)
                                 .animation(
-                                    .spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + 0.4 + Double(index) * 0.1),
+                                    .spring(
+                                        response: 0.6,
+                                        dampingFraction: 0.8
+                                    ).delay(sectionDelay + 0.4 + Double(index) * 0.1),
                                     value: appearAnimation
                                 )
 
@@ -95,7 +111,10 @@ struct RecipeDetailView: View {
                                 .opacity(appearAnimation ? 1 : 0)
                                 .offset(x: appearAnimation ? 0 : 20)
                                 .animation(
-                                    .spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + 0.4 + Double(index) * 0.1),
+                                    .spring(
+                                        response: 0.6,
+                                        dampingFraction: 0.8
+                                    ).delay(sectionDelay + 0.4 + Double(index) * 0.1),
                                     value: appearAnimation
                                 )
                         }
