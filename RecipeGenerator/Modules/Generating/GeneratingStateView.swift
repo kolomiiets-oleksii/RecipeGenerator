@@ -1,9 +1,20 @@
 import SwiftUI
 
+// MARK: - Generating State View
+
+/// A loading view displayed while the AI generates a recipe.
+///
+/// Features an animated brain icon with orbiting particles and pulsing effects
+/// to provide visual feedback during the generation process.
 struct GeneratingStateView: View {
+
+    // MARK: - State
+
     @State private var animationAmount = 0.0
     @State private var particleOffset = 0.0
     @State private var glowIntensity = 0.0
+
+    // MARK: - Body
 
     var body: some View {
         VStack(spacing: 32) {

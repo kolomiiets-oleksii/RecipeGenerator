@@ -1,0 +1,15 @@
+{
+  "originHash" : "a87d88b90961fc14ea26e5347c6d74384db651472fae65fb2558f6ad8ccf63a1",
+  "pins" : [
+    {
+      "identity" : "swiftformatlintplugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Snapp-Mobile/SwiftFormatLintPlugin",
+      "state" : {
+        "branch" : "main",
+        "revision" : "125c3a3b2e9baafcb2c20f8ddae241c0d5b4b1e3"
+      }
+    }
+  ],
+  "version" : 3
+}

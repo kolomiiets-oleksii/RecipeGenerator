@@ -1,18 +1,23 @@
 import SwiftUI
 
-extension DateComponentsFormatter {
-    static let cookingDuration: DateComponentsFormatter = {
-        let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.hour, .minute, .second]
-        formatter.unitsStyle = .abbreviated
-        return formatter
-    }()
-}
+// MARK: - Recipe Detail View
 
+/// Displays the generated recipe with animated reveal effects.
+///
+/// Shows the recipe title, ingredients, cooking instructions, and a nutrition facts grid.
+/// Each section animates in with staggered timing for a polished presentation.
 struct RecipeDetailView: View {
+
+    // MARK: - Properties
+
     let recipe: Recipe
+
+    // MARK: - State
+
     @State private var appearAnimation = false
     @State private var sectionDelay = 0.0
+
+    // MARK: - Body
 
     var body: some View {
         Form {
@@ -28,7 +33,9 @@ struct RecipeDetailView: View {
                 if let ingredients = recipe.ingredients, !ingredients.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
                         let ingredientList = ingredients.components(separatedBy: ",")
-                        ForEach(Array(ingredientList.enumerated()), id: \.offset) { index, ingredient in
+                        ForEach(Array(ingredientList.enumerated()), id: \.offset) {
+                            index,
+                            ingredient in
                             HStack(alignment: .top, spacing: 8) {
                                 Text("•")
                                     .foregroundColor(.blue)
@@ -36,7 +43,10 @@ struct RecipeDetailView: View {
                                     .opacity(appearAnimation ? 1 : 0)
                                     .offset(x: appearAnimation ? 0 : -20)
                                     .animation(
-                                        .spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + Double(index) * 0.1),
+                                        .spring(
+                                            response: 0.6,
+                                            dampingFraction: 0.8
+                                        ).delay(sectionDelay + Double(index) * 0.1),
                                         value: appearAnimation
                                     )
 
@@ -45,7 +55,10 @@ struct RecipeDetailView: View {
                                     .opacity(appearAnimation ? 1 : 0)
                                     .offset(x: appearAnimation ? 0 : -20)
                                     .animation(
-                                        .spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + Double(index) * 0.1),
+                                        .spring(
+                                            response: 0.6,
+                                            dampingFraction: 0.8
+                                        ).delay(sectionDelay + Double(index) * 0.1),
                                         value: appearAnimation
                                     )
                             }
@@ -61,19 +74,10 @@ struct RecipeDetailView: View {
                 .font(.headline)
                 .opacity(appearAnimation ? 1 : 0)
                 .offset(y: appearAnimation ? 0 : 20)
-                .animation(.spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + 0.3), value: appearAnimation)
-
-                // TODO: "What is the cooking time?"
-//                HStack {
-//                    Image(systemName: "clock")
-//                        .foregroundColor(.orange)
-//                    Text("Time to cook: \(DateComponentsFormatter.cookingDuration.string(from: recipe.totalDuration) ?? "--")")
-//                }
-//                .font(.headline)
-//                .opacity(appearAnimation ? 1 : 0)
-//                .offset(y: appearAnimation ? 0 : 20)
-//                .animation(.spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + 0.3), value: appearAnimation)
-
+                .animation(
+                    .spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + 0.3),
+                    value: appearAnimation
+                )
             }
 
             if let steps = recipe.steps, !steps.isEmpty {
@@ -81,7 +85,9 @@ struct RecipeDetailView: View {
                     let stepList = steps.components(separatedBy: ".").filter { Int($0) == nil }.filter {
                         !$0.trimmingCharacters(in: .whitespaces).isEmpty
                     }
-                    ForEach(Array(stepList.enumerated()), id: \.offset) { index, step in
+                    ForEach(Array(stepList.enumerated()), id: \.offset) {
+                        index,
+                        step in
                         HStack(alignment: .top, spacing: 12) {
                             Text("\(index + 1)")
                                 .font(.headline)
@@ -93,7 +99,10 @@ struct RecipeDetailView: View {
                                 .opacity(appearAnimation ? 1 : 0)
                                 .scaleEffect(appearAnimation ? 1 : 0.5)
                                 .animation(
-                                    .spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + 0.4 + Double(index) * 0.1),
+                                    .spring(
+                                        response: 0.6,
+                                        dampingFraction: 0.8
+                                    ).delay(sectionDelay + 0.4 + Double(index) * 0.1),
                                     value: appearAnimation
                                 )
 
@@ -102,7 +111,10 @@ struct RecipeDetailView: View {
                                 .opacity(appearAnimation ? 1 : 0)
                                 .offset(x: appearAnimation ? 0 : 20)
                                 .animation(
-                                    .spring(response: 0.6, dampingFraction: 0.8).delay(sectionDelay + 0.4 + Double(index) * 0.1),
+                                    .spring(
+                                        response: 0.6,
+                                        dampingFraction: 0.8
+                                    ).delay(sectionDelay + 0.4 + Double(index) * 0.1),
                                     value: appearAnimation
                                 )
                         }
@@ -189,6 +201,9 @@ struct RecipeDetailView: View {
     }
 }
 
+// MARK: - Nutrition Item
+
+/// A single nutrition fact display with icon and animated appearance.
 struct NutritionItem: View {
     let icon: String
     let label: String
@@ -232,6 +247,8 @@ struct NutritionItem: View {
         }
     }
 }
+
+// MARK: - Preview
 
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {

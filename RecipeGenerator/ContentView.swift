@@ -1,10 +1,21 @@
 import SwiftUI
 
+// MARK: - Content View
+
+/// The main container view that orchestrates state-based UI transitions.
+///
+/// This view acts as the central coordinator, switching between idle, generating,
+/// generated, and error states with smooth animated transitions.
 struct ContentView: View {
+
+    // MARK: - State
+
     @State var error: String?
     @State var recipe: Recipe?
     @State var generatingState: GeneratingState = .idle
     @State var text: String = ""
+
+    // MARK: - Body
 
     var body: some View {
         NavigationView {

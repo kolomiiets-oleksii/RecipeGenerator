@@ -1,6 +1,15 @@
 import SwiftUI
 
+// MARK: - Generating State
+
+/// Represents the current state of the recipe generation process.
+///
+/// This enum serves as a state machine for the app's main workflow,
+/// enabling type-safe state transitions and UI updates.
 enum GeneratingState: Equatable {
+
+    // MARK: - Equatable
+
     static func == (lhs: GeneratingState, rhs: GeneratingState) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle): return true
@@ -11,11 +20,23 @@ enum GeneratingState: Equatable {
         }
     }
 
+    // MARK: - Cases
+
+    /// Initial state, waiting for user input.
     case idle
+
+    /// An error occurred during generation.
     case error(String)
+
+    /// Successfully generated a recipe.
     case generated(Recipe)
+
+    /// Currently generating a recipe.
     case generating
 
+    // MARK: - Computed Properties
+
+    /// Returns `true` if currently in the generating state.
     var isGenerating: Bool {
         if case .generating = self {
             return true
@@ -24,6 +45,7 @@ enum GeneratingState: Equatable {
         }
     }
 
+    /// Returns `true` if in the idle state.
     var isIdle: Bool {
         if case .idle = self {
             return true
@@ -32,6 +54,9 @@ enum GeneratingState: Equatable {
         }
     }
 
+    // MARK: - UI Properties
+
+    /// The text to display on the action button.
     var actionText: String {
         switch self {
         case .idle:

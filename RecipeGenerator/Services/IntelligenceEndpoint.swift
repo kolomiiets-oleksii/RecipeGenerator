@@ -1,11 +1,29 @@
 import Foundation
 
+// MARK: - Intelligence Endpoint
+
+/// Defines the available AI generation endpoints and their configurations.
+///
+/// Each endpoint encapsulates the system instructions and prompt template
+/// needed to generate a specific type of content.
 enum IntelligenceEndpoint {
+
+    // MARK: - Prompt Arguments
+
+    /// Arguments that can be passed to endpoint prompts.
     enum PromptArgument {
+        /// A comma-separated list of ingredients for recipe generation.
         case ingredients(String)
     }
+
+    // MARK: - Endpoints
+
+    /// Generates a complete recipe with nutritional information.
     case recipe
 
+    // MARK: - Configuration
+
+    /// The system instructions that define the AI's behavior for this endpoint.
     var instructions: String {
         switch self {
         case .recipe:

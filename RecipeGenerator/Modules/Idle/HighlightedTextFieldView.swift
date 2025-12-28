@@ -59,14 +59,21 @@ struct HighlightedTextFieldView: View {
                             RoundedRectangle(cornerRadius: 12)
                                 .stroke(
                                     LinearGradient(
-                                        colors: text.isEmpty ? [.blue.opacity(0.3), .purple.opacity(0.3)] : [.green, .blue],
+                                        colors: text.isEmpty
+                                            ? [
+                                                .blue.opacity(0.3),
+                                                .purple.opacity(0.3),
+                                            ] : [.green, .blue],
                                         startPoint: .leading,
                                         endPoint: .trailing
                                     ),
                                     lineWidth: text.isEmpty ? 2 : 3
                                 )
                                 .scaleEffect(isAnimating ? 1.02 : 1.0)
-                                .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true), value: isAnimating)
+                                .animation(
+                                    .easeInOut(duration: 1.5).repeatForever(autoreverses: true),
+                                    value: isAnimating
+                                )
                         )
                 )
                 .opacity(glowIntensity)
