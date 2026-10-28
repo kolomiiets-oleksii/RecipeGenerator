@@ -11,6 +11,7 @@ import SwiftUI
     /// | `-stubGenerator success\|slow\|failure` | Replaces the model with a stub |
     /// | `-autoGenerate "chicken, rice"` | Fills the ingredients and starts generating |
     /// | `-seedServings 4` | Sets the seeded recipe's serving count |
+    /// | `-seedIngredient "Chicken breast=600"` | Sets one seeded ingredient's grams |
     enum DebugLaunchArguments {
         enum StubMode: String {
             case success
@@ -24,6 +25,14 @@ import SwiftUI
         static var autoGenerate: String? { value(after: "-autoGenerate") }
         static var seedServings: Int? { value(after: "-seedServings").flatMap(Int.init) }
 
+        /// `-seedIngredient "Chicken breast=600"` changes one seeded ingredient's grams.
+        static var seedIngredient: (name: String, grams: Double)? {
+            guard let raw = value(after: "-seedIngredient") else { return nil }
+            let parts = raw.split(separator: "=", maxSplits: 1).map(String.init)
+            guard parts.count == 2, let grams = Double(parts[1]) else { return nil }
+            return (parts[0], grams)
+        }
+
         static var stubGenerator: (any RecipeGenerating)? {
             guard let raw = value(after: "-stubGenerator"), let mode = StubMode(rawValue: raw) else { return nil }
             switch mode {
@@ -33,6 +42,16 @@ import SwiftUI
                 return StubRecipeGenerator(result: .success(.sample), delay: .seconds(600))
             case .failure:
                 return StubRecipeGenerator(result: .failure(IntelligenceError.generationFailed), delay: .seconds(1))
+            }
+        }
+
+        /// Applies the `-seed...` overrides to the seeded sample recipe.
+        static func applySeedOverrides(to recipe: Recipe) {
+            if let servings = seedServings {
+                recipe.servings = servings
+            }
+            if let seed = seedIngredient, let ingredient = recipe.ingredients?.first(where: { $0.name == seed.name }) {
+                ingredient.grams = seed.grams
             }
         }
 

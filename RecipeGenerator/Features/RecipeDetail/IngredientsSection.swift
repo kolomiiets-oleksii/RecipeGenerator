@@ -7,9 +7,7 @@ struct IngredientsSection: View {
         GroupBox("Ingredients") {
             VStack(spacing: Design.Spacing.small) {
                 ForEach(ingredients) { ingredient in
-                    LabeledContent(ingredient.name) {
-                        Text.mass(grams: ingredient.grams)
-                    }
+                    IngredientRow(ingredient: ingredient)
 
                     if ingredient != ingredients.last {
                         Divider()

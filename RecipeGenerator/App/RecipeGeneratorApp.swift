@@ -11,9 +11,9 @@ struct RecipeGeneratorApp: App {
         #if DEBUG
             if DebugLaunchArguments.seedSampleData {
                 container = .preview
-                if let servings = DebugLaunchArguments.seedServings {
-                    let recipes = try? container.mainContext.fetch(FetchDescriptor<Recipe>())
-                    recipes?.first?.servings = servings
+                let recipes = try? container.mainContext.fetch(FetchDescriptor<Recipe>())
+                if let recipe = recipes?.first {
+                    DebugLaunchArguments.applySeedOverrides(to: recipe)
                 }
                 return
             }

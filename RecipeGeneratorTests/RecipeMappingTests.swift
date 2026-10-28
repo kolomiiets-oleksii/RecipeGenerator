@@ -91,6 +91,18 @@ struct RecipeMappingTests {
         #expect(abs(recipe.servingMass - massAtTwo / 2) < 0.0001)
     }
 
+    @Test("changing an ingredient's grams recalculates nutrition and serving size")
+    func editingGramsRecalculates() throws {
+        let recipe = Recipe(generated: .sample)
+        let before = recipe.nutritionPerServing.energy
+        let chicken = try #require(recipe.sortedIngredients.first { $0.name == "Chicken breast" })
+
+        chicken.grams += 100  // +100 g at 165 kcal per 100 g, over 2 servings
+
+        #expect(abs(recipe.nutritionPerServing.energy - (before + 165 / 2)) < 0.0001)
+        #expect(recipe.servingMass == (735.0 / 2))
+    }
+
     @Test("saves and fetches through an in-memory store")
     func persistsRoundTrip() throws {
         let container = try ModelContainerFactory.make(inMemory: true)
