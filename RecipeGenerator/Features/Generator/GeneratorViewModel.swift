@@ -9,6 +9,9 @@ final class GeneratorViewModel {
     private(set) var dietaryOptions: Set<DietaryOption> = []
     private(set) var state: GeneratorState = .idle
 
+    /// What the model has written so far, while `state` is `.generating`.
+    private(set) var progress = RecipeProgress.empty
+
     private let generator: any RecipeGenerating
     private var generationTask: Task<Void, Never>?
 
@@ -85,12 +88,20 @@ final class GeneratorViewModel {
         let runID = UUID()
         currentRunID = runID
         state = .generating
+        progress = .empty
         return runID
     }
 
     private func perform(_ runID: UUID) async {
         do {
-            let generated = try await generator.generate(from: trimmedIngredients, dietary: dietaryOptions)
+            let generated = try await generator.generate(
+                from: trimmedIngredients,
+                dietary: dietaryOptions,
+                onProgress: { [weak self] progress in
+                    guard let self, currentRunID == runID else { return }
+                    self.progress = progress
+                }
+            )
             guard currentRunID == runID else { return }
             state = .generated(Recipe(generated: generated))
         } catch {

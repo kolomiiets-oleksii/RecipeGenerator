@@ -22,22 +22,37 @@ struct FoundationModelsRecipeGenerator: RecipeGenerating {
         )
     }
 
-    func generate(from ingredients: String, dietary: Set<DietaryOption>) async throws -> GeneratedRecipe {
+    func generate(
+        from ingredients: String,
+        dietary: Set<DietaryOption>,
+        onProgress: (RecipeProgress) -> Void
+    ) async throws -> GeneratedRecipe {
         if case .unavailable(let reason) = SystemLanguageModel.default.availability {
             throw IntelligenceError.modelUnavailable(reason)
         }
 
         let session = LanguageModelSession(instructions: RecipePrompts.instructions)
+        let prompt = RecipePrompts.prompt(ingredients: ingredients, dietary: dietary)
 
+        #if DEBUG
+            let start = ContinuousClock.now
+            var firstSnapshot: Duration?
+        #endif
         do {
-            let response = try await session.respond(
-                to: RecipePrompts.prompt(ingredients: ingredients, dietary: dietary),
-                generating: GeneratedRecipe.self
-            )
+            var latest: GeneratedContent?
+            for try await snapshot in session.streamResponse(to: prompt, generating: GeneratedRecipe.self) {
+                #if DEBUG
+                    firstSnapshot = firstSnapshot ?? ContinuousClock.now - start
+                #endif
+                onProgress(RecipeProgress(snapshot.content))
+                latest = snapshot.rawContent
+            }
+            guard let latest else { throw IntelligenceError.generationFailed }
+            let recipe = try GeneratedRecipe(latest)
             #if DEBUG
-                Self.log(response.content)
+                Self.log(recipe, firstSnapshot: firstSnapshot, total: ContinuousClock.now - start)
             #endif
-            return response.content
+            return recipe
         } catch let error as LanguageModelSession.GenerationError {
             throw IntelligenceError(generationError: error)
         }
@@ -45,9 +60,11 @@ struct FoundationModelsRecipeGenerator: RecipeGenerating {
 
     #if DEBUG
         /// Prints what the model returned so prompt changes can be compared run to run.
-        private static func log(_ recipe: GeneratedRecipe) {
+        private static func log(_ recipe: GeneratedRecipe, firstSnapshot: Duration?, total: Duration) {
             // stderr is unbuffered, so lines survive when the app is killed after generating.
             func emit(_ line: String) { fputs(line + "\n", stderr) }
+            let seconds = Duration.UnitsFormatStyle.units(allowed: [.seconds], fractionalPart: .show(length: 2))
+            emit("[GEN] first \((firstSnapshot ?? .zero).formatted(seconds)) total \(total.formatted(seconds))")
             emit("[GEN] \(recipe.title)")
             for item in recipe.ingredients {
                 emit(
