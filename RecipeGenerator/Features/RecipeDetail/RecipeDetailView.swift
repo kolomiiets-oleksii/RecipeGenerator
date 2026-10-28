@@ -13,6 +13,10 @@ struct RecipeDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem {
+                    ShareLink(item: recipe.shareText, subject: Text(recipe.title))
+                }
+
+                ToolbarItem {
                     Button("Delete Recipe", systemImage: "trash", role: .destructive) {
                         isConfirmingDelete = true
                     }
