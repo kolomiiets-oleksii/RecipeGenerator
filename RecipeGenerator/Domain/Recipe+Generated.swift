@@ -37,7 +37,7 @@ extension Recipe {
         self.init(
             title: generated.title.trimmingCharacters(in: .whitespacesAndNewlines),
             summary: generated.summary.trimmingCharacters(in: .whitespacesAndNewlines),
-            servings: generated.servings,
+            servings: NutritionCalculator.suggestedServings(totalMass: ingredients.reduce(0) { $0 + $1.grams }),
             steps: steps,
             ingredients: ingredients
         )

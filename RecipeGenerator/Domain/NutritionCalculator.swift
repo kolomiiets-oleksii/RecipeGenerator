@@ -30,6 +30,18 @@ enum NutritionCalculator {
         items.reduce(0) { $0 + max($1.grams, 0) }
     }
 
+    /// Grams of food in one normal main meal. Used to turn a recipe's total weight into a serving count.
+    static let servingMassTarget = 400.0
+
+    /// How many servings a recipe of this total mass makes, from 1 to 12.
+    ///
+    /// The model's own serving count was unreliable (it spread about 800 g over 4 servings), so the app
+    /// derives it from the weight of the ingredients instead.
+    static func suggestedServings(totalMass: Double) -> Int {
+        let servings = Int((max(totalMass, 0) / servingMassTarget).rounded())
+        return min(max(servings, 1), 12)
+    }
+
     /// Mass of a single serving, in grams.
     static func servingMass(of items: [Item], servings: Int) -> Double {
         totalMass(of: items) / Double(max(servings, 1))

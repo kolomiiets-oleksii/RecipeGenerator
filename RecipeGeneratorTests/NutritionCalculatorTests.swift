@@ -57,4 +57,22 @@ struct NutritionCalculatorTests {
     func servingMass() {
         #expect(NutritionCalculator.servingMass(of: [chicken, rice], servings: 3) == 100)
     }
+
+    @Test("suggests about one serving per 400 g")
+    func suggestedServingsFromMass() {
+        #expect(NutritionCalculator.suggestedServings(totalMass: 400) == 1)
+        #expect(NutritionCalculator.suggestedServings(totalMass: 635) == 2)
+        #expect(NutritionCalculator.suggestedServings(totalMass: 965) == 2)
+        #expect(NutritionCalculator.suggestedServings(totalMass: 1_200) == 3)
+        #expect(NutritionCalculator.suggestedServings(totalMass: 1_800) == 5)
+    }
+
+    @Test("suggested servings stay between 1 and 12")
+    func suggestedServingsClamped() {
+        #expect(NutritionCalculator.suggestedServings(totalMass: 0) == 1)
+        #expect(NutritionCalculator.suggestedServings(totalMass: -50) == 1)
+        #expect(NutritionCalculator.suggestedServings(totalMass: 100) == 1)
+        #expect(NutritionCalculator.suggestedServings(totalMass: 3_075) == 8)
+        #expect(NutritionCalculator.suggestedServings(totalMass: 50_000) == 12)
+    }
 }

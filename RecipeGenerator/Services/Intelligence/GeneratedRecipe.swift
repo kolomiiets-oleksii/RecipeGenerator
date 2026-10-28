@@ -9,9 +9,6 @@ struct GeneratedRecipe: Equatable {
     @Guide(description: "One appetizing sentence describing the dish.")
     let summary: String
 
-    @Guide(description: "Number of servings the whole recipe makes.", .range(1...12))
-    let servings: Int
-
     @Guide(description: "Every ingredient in the recipe, each with its mass in grams.", .minimumCount(1))
     let ingredients: [GeneratedIngredient]
 

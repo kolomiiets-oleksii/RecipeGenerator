@@ -4,7 +4,6 @@ extension GeneratedRecipe {
     static let sample = GeneratedRecipe(
         title: "Garlic Chicken and Rice",
         summary: "A quick one-pan dinner with tender chicken, fluffy rice and broccoli.",
-        servings: 2,
         ingredients: [
             GeneratedIngredient(
                 name: "Chicken breast",

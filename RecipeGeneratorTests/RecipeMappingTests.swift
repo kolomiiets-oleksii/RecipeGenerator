@@ -24,7 +24,6 @@ struct RecipeMappingTests {
         let generated = GeneratedRecipe(
             title: "  Soup  ",
             summary: "",
-            servings: 0,
             ingredients: [
                 GeneratedIngredient(
                     name: "  Carrot ",
@@ -61,6 +60,12 @@ struct RecipeMappingTests {
         #expect(recipe.sortedIngredients[0].grams == 0)
         #expect(recipe.sortedIngredients[0].energyPer100g == 0)
         #expect(recipe.steps == ["Boil.", "Serve."])
+    }
+
+    @Test("derives the serving count from the total weight of the ingredients")
+    func servingsComeFromWeight() {
+        // 300 + 120 + 200 + 15 = 635 g, about 1.6 servings of 400 g.
+        #expect(Recipe(generated: .sample).servings == 2)
     }
 
     @Test("derives per-serving nutrition from ingredients")
