@@ -33,6 +33,14 @@ final class FoundationModelsRecipeGenerator: RecipeGenerating {
         prewarmedSession = session
     }
 
+    /// Sampling settings for recipes. Debug builds can override them to compare settings.
+    private static var options: GenerationOptions {
+        #if DEBUG
+            if let override = DebugLaunchArguments.generationOptions { return override }
+        #endif
+        return GenerationOptions()
+    }
+
     func generate(
         from ingredients: String,
         dietary: Set<DietaryOption>,
@@ -52,7 +60,8 @@ final class FoundationModelsRecipeGenerator: RecipeGenerating {
         #endif
         do {
             var latest: GeneratedContent?
-            for try await snapshot in session.streamResponse(to: prompt, generating: GeneratedRecipe.self) {
+            let stream = session.streamResponse(to: prompt, generating: GeneratedRecipe.self, options: Self.options)
+            for try await snapshot in stream {
                 #if DEBUG
                     firstSnapshot = firstSnapshot ?? ContinuousClock.now - start
                 #endif
