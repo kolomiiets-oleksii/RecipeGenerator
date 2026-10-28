@@ -1,21 +1,22 @@
 import Foundation
 
 extension Ingredient {
-    /// Maps one model-generated ingredient, clamping nonsense values to zero.
+    /// Maps one model-generated ingredient, fixing values that cannot be true.
     convenience init(generated: GeneratedIngredient, order: Int) {
+        let reported = NutritionFacts(
+            energy: generated.energyPer100g,
+            protein: generated.proteinPer100g,
+            carbs: generated.carbsPer100g,
+            fiber: generated.fiberPer100g,
+            sugar: generated.sugarPer100g,
+            fat: generated.fatPer100g,
+            saturatedFat: generated.saturatedFatPer100g
+        )
         self.init(
             name: generated.name.trimmingCharacters(in: .whitespacesAndNewlines),
             grams: max(generated.grams, 0),
             order: order,
-            per100g: NutritionFacts(
-                energy: max(generated.energyPer100g, 0),
-                protein: max(generated.proteinPer100g, 0),
-                carbs: max(generated.carbsPer100g, 0),
-                fiber: max(generated.fiberPer100g, 0),
-                sugar: max(generated.sugarPer100g, 0),
-                fat: max(generated.fatPer100g, 0),
-                saturatedFat: max(generated.saturatedFatPer100g, 0)
-            )
+            per100g: reported.sanitizedPer100g
         )
     }
 }
