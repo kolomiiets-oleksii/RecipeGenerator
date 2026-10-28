@@ -3,7 +3,7 @@ import SwiftUI
 /// The scrollable body of a recipe, shared by the saved-recipe detail and the
 /// review step in the generator.
 struct RecipeContentView: View {
-    let recipe: Recipe
+    @Bindable var recipe: Recipe
 
     var body: some View {
         ScrollView {
@@ -20,7 +20,7 @@ struct RecipeContentView: View {
                             .foregroundStyle(.secondary)
                     }
 
-                    ServingsLabel(servings: recipe.servings, servingMass: recipe.servingMass)
+                    ServingsStepper(servings: $recipe.servings, servingMass: recipe.servingMass)
                 }
 
                 IngredientsSection(ingredients: recipe.sortedIngredients)

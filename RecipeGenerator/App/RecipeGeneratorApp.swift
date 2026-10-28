@@ -11,6 +11,10 @@ struct RecipeGeneratorApp: App {
         #if DEBUG
             if DebugLaunchArguments.seedSampleData {
                 container = .preview
+                if let servings = DebugLaunchArguments.seedServings {
+                    let recipes = try? container.mainContext.fetch(FetchDescriptor<Recipe>())
+                    recipes?.first?.servings = servings
+                }
                 return
             }
         #endif

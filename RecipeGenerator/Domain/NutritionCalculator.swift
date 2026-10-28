@@ -39,7 +39,7 @@ enum NutritionCalculator {
     /// derives it from the weight of the ingredients instead.
     static func suggestedServings(totalMass: Double) -> Int {
         let servings = Int((max(totalMass, 0) / servingMassTarget).rounded())
-        return min(max(servings, 1), 12)
+        return min(max(servings, Recipe.servingsRange.lowerBound), Recipe.servingsRange.upperBound)
     }
 
     /// Mass of a single serving, in grams.

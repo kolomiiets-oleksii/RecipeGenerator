@@ -78,6 +78,19 @@ struct RecipeMappingTests {
         #expect(recipe.servingMass == 317.5)
     }
 
+    @Test("changing servings rescales per-serving nutrition and serving size")
+    func servingsRescaleNutrition() {
+        let recipe = Recipe(generated: .sample)
+        let atTwo = recipe.nutritionPerServing
+        let massAtTwo = recipe.servingMass
+
+        recipe.servings = 4
+
+        #expect(abs(recipe.nutritionPerServing.energy - atTwo.energy / 2) < 0.0001)
+        #expect(abs(recipe.nutritionPerServing.protein - atTwo.protein / 2) < 0.0001)
+        #expect(abs(recipe.servingMass - massAtTwo / 2) < 0.0001)
+    }
+
     @Test("saves and fetches through an in-memory store")
     func persistsRoundTrip() throws {
         let container = try ModelContainerFactory.make(inMemory: true)

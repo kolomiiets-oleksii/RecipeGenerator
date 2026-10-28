@@ -34,6 +34,9 @@ final class Recipe {
         self.ingredients = ingredients
     }
 
+    /// The serving counts a recipe can have.
+    static let servingsRange = 1...12
+
     // MARK: - Derived values
 
     var sortedIngredients: [Ingredient] {

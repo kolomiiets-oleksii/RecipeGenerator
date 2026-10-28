@@ -10,6 +10,7 @@ import SwiftUI
     /// | `-presentGenerator` | Opens the New Recipe sheet |
     /// | `-stubGenerator success\|slow\|failure` | Replaces the model with a stub |
     /// | `-autoGenerate "chicken, rice"` | Fills the ingredients and starts generating |
+    /// | `-seedServings 4` | Sets the seeded recipe's serving count |
     enum DebugLaunchArguments {
         enum StubMode: String {
             case success
@@ -21,6 +22,7 @@ import SwiftUI
         static var selectFirstRecipe: Bool { arguments.contains("-selectFirstRecipe") }
         static var presentGenerator: Bool { arguments.contains("-presentGenerator") }
         static var autoGenerate: String? { value(after: "-autoGenerate") }
+        static var seedServings: Int? { value(after: "-seedServings").flatMap(Int.init) }
 
         static var stubGenerator: (any RecipeGenerating)? {
             guard let raw = value(after: "-stubGenerator"), let mode = StubMode(rawValue: raw) else { return nil }
