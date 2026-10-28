@@ -1,0 +1,17 @@
+2026-10-28 13:50:02.943 RecipeGenerator[78874:25065881] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 13:50:02.943 RecipeGenerator[78874:25065881] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+[GEN] Simple Chicken & Veggie Stir-Fry
+[GEN] ingredient chicken breast | 450.0 g | 165.0 kcal/100g | P 31.0 C 0.0 F 3.6
+[GEN] ingredient rice | 250.0 g | 130.0 kcal/100g | P 2.7 C 27.0 F 0.2
+[GEN] ingredient broccoli | 200.0 g | 34.0 kcal/100g | P 2.9 C 3.6 F 0.3
+[GEN] ingredient garlic | 15.0 g | 14.0 kcal/100g | P 1.7 C 0.4 F 0.1
+[GEN] ingredient olive oil | 15.0 g | 998.0 kcal/100g | P 0.0 C 0.0 F 91.5
+[GEN] ingredient salt | 1.0 g | 0.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] ingredient black pepper | 1.0 g | 0.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] step Heat olive oil in a pan for 3 minutes.
+[GEN] step Add garlic and cook for 30 seconds.
+[GEN] step Add chicken and cook for 5 minutes.
+[GEN] step Add broccoli and cook for 4 minutes.
+[GEN] step Stir in rice and season with salt and pepper, cook for 3 minutes.
+io.snappmobile.RecipeGenerator: 78874

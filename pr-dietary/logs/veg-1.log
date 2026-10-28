@@ -1,0 +1,17 @@
+2026-10-28 13:45:49.977 RecipeGenerator[73880:25046370] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 13:45:49.977 RecipeGenerator[73880:25046370] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+[GEN] Vegetarian Broccoli Rice Bowl
+[GEN] ingredient broccoli | 400.0 g | 34.0 kcal/100g | P 2.8 C 3.2 F 0.6
+[GEN] ingredient rice | 300.0 g | 130.0 kcal/100g | P 2.6 C 27.0 F 0.3
+[GEN] ingredient garlic | 10.0 g | 14.0 kcal/100g | P 0.5 C 0.3 F 0.2
+[GEN] ingredient olive oil | 15.0 g | 988.0 kcal/100g | P 0.0 C 0.0 F 98.8
+[GEN] ingredient salt | 2.0 g | 0.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] ingredient black pepper | 1.0 g | 26.0 kcal/100g | P 0.6 C 0.9 F 0.1
+[GEN] step Heat olive oil in a pan for 5 minutes.
+[GEN] step Add garlic and cook for 1 minute.
+[GEN] step Add broccoli and stir for 3 minutes.
+[GEN] step Add rice and stir for 2 minutes.
+[GEN] step Season with salt and black pepper and stir for 1 minute.
+[GEN] step Serve warm.
+io.snappmobile.RecipeGenerator: 73880
