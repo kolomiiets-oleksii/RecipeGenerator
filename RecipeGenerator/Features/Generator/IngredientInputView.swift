@@ -6,6 +6,7 @@ struct IngredientInputView: View {
     let dietaryOptions: Set<DietaryOption>
     let onToggleDietaryOption: (DietaryOption) -> Void
     let unavailabilityMessage: String?
+    var languageNotice: String?
     let canGenerate: Bool
     let onGenerate: () -> Void
 
@@ -42,6 +43,12 @@ struct IngredientInputView: View {
                 Label("Separate ingredients with commas", systemImage: "lightbulb")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
+
+                if let languageNotice {
+                    Label(languageNotice, systemImage: "globe")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
 
                 if let unavailabilityMessage {
                     Label(unavailabilityMessage, systemImage: "exclamationmark.triangle.fill")

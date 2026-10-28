@@ -24,6 +24,8 @@ struct DietaryOptionsPicker: View {
                     } label: {
                         Label {
                             Text(option.title)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.75)
                         } icon: {
                             Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
                         }

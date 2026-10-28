@@ -1,0 +1,761 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ per serving": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ на порцію"
+          }
+        }
+      }
+    },
+    "%lld servings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld serving"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld servings"
+                }
+              }
+            }
+          }
+        },
+        "uk": {
+          "variations": {
+            "plural": {
+              "few": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld порції"
+                }
+              },
+              "many": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld порцій"
+                }
+              },
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld порція"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld порції"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld servings, %@ per serving": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld serving, %@ per serving"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld servings, %@ per serving"
+                }
+              }
+            }
+          }
+        },
+        "uk": {
+          "variations": {
+            "plural": {
+              "few": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld порції, %@ на порцію"
+                }
+              },
+              "many": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld порцій, %@ на порцію"
+                }
+              },
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld порція, %@ на порцію"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld порції, %@ на порцію"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Apple Intelligence doesn't support your language yet. Recipes are written in English.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence поки не підтримує вашу мову. Рецепти пишуться англійською."
+          }
+        }
+      }
+    },
+    "Apple Intelligence isn't available right now.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Intelligence зараз недоступний."
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скасувати"
+          }
+        }
+      }
+    },
+    "Carbs": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вуглеводи"
+          }
+        }
+      }
+    },
+    "Choose a recipe from the list, or create a new one.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оберіть рецепт зі списку або створіть новий."
+          }
+        }
+      }
+    },
+    "Cooking up something special…": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готуємо щось особливе…"
+          }
+        }
+      }
+    },
+    "Create Image": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Створити зображення"
+          }
+        }
+      }
+    },
+    "Creating image…": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Створюємо зображення…"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Видалити"
+          }
+        }
+      }
+    },
+    "Delete Recipe": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Видалити рецепт"
+          }
+        }
+      }
+    },
+    "Delete this recipe?": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Видалити цей рецепт?"
+          }
+        }
+      }
+    },
+    "Dietary needs": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дієтичні вподобання"
+          }
+        }
+      }
+    },
+    "Edit Ingredients": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Змінити інгредієнти"
+          }
+        }
+      }
+    },
+    "Energy": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Енергія"
+          }
+        }
+      }
+    },
+    "Energy by macro": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Енергія за макронутрієнтами"
+          }
+        }
+      }
+    },
+    "Fat": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Жири"
+          }
+        }
+      }
+    },
+    "Fiber": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Клітковина"
+          }
+        }
+      }
+    },
+    "Generate Recipe": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Створити рецепт"
+          }
+        }
+      }
+    },
+    "Generate your first recipe from the ingredients you have.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Створіть перший рецепт із наявних інгредієнтів."
+          }
+        }
+      }
+    },
+    "Gluten-free": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без глютену"
+          }
+        }
+      }
+    },
+    "Grams": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Грами"
+          }
+        }
+      }
+    },
+    "Grams of %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Грами: %@"
+          }
+        }
+      }
+    },
+    "Illustration of %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ілюстрація: %@"
+          }
+        }
+      }
+    },
+    "Image creation isn't available on this device.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Створення зображень недоступне на цьому пристрої."
+          }
+        }
+      }
+    },
+    "Ingredients": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Інгредієнти"
+          }
+        }
+      }
+    },
+    "Instructions": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Приготування"
+          }
+        }
+      }
+    },
+    "List the ingredients you have and Apple Intelligence will write a recipe with nutrition worked out for you.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перелічіть наявні інгредієнти, і Apple Intelligence напише рецепт та розрахує харчову цінність."
+          }
+        }
+      }
+    },
+    "New Recipe": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Новий рецепт"
+          }
+        }
+      }
+    },
+    "No Recipes Yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Рецептів ще немає"
+          }
+        }
+      }
+    },
+    "No image could be created for this recipe.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не вдалося створити зображення для цього рецепта."
+          }
+        }
+      }
+    },
+    "Nut-free": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без горіхів"
+          }
+        }
+      }
+    },
+    "Nutrition per Serving": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Харчова цінність на порцію"
+          }
+        }
+      }
+    },
+    "Protein": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Білки"
+          }
+        }
+      }
+    },
+    "Recipe Book": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Книга рецептів"
+          }
+        }
+      }
+    },
+    "Saturated Fat": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Насичені жири"
+          }
+        }
+      }
+    },
+    "Save to Recipe Book": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Зберегти в книгу рецептів"
+          }
+        }
+      }
+    },
+    "Search recipes": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пошук рецептів"
+          }
+        }
+      }
+    },
+    "Select a Recipe": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оберіть рецепт"
+          }
+        }
+      }
+    },
+    "Separate ingredients with commas": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Розділяйте інгредієнти комами"
+          }
+        }
+      }
+    },
+    "Something Went Wrong": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Щось пішло не так"
+          }
+        }
+      }
+    },
+    "Start Over": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Почати заново"
+          }
+        }
+      }
+    },
+    "Step %lld: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Крок %lld: %@"
+          }
+        }
+      }
+    },
+    "Sugar": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Цукор"
+          }
+        }
+      }
+    },
+    "That ingredient list is too long. Try fewer ingredients.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Список інгредієнтів задовгий. Спробуйте менше інгредієнтів."
+          }
+        }
+      }
+    },
+    "That request couldn't be completed. Try different ingredients.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не вдалося виконати запит. Спробуйте інші інгредієнти."
+          }
+        }
+      }
+    },
+    "The image couldn't be saved.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не вдалося зберегти зображення."
+          }
+        }
+      }
+    },
+    "The on-device model is still getting ready. Try again in a few minutes.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Модель на пристрої ще готується. Спробуйте за кілька хвилин."
+          }
+        }
+      }
+    },
+    "The recipe couldn't be generated. Please try again.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не вдалося створити рецепт. Спробуйте ще раз."
+          }
+        }
+      }
+    },
+    "This can't be undone.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Цю дію не можна скасувати."
+          }
+        }
+      }
+    },
+    "This device doesn't support Apple Intelligence.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Цей пристрій не підтримує Apple Intelligence."
+          }
+        }
+      }
+    },
+    "Try Again": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Спробувати ще раз"
+          }
+        }
+      }
+    },
+    "Turn on Apple Intelligence in Settings to generate recipes.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Увімкніть Apple Intelligence у Параметрах, щоб створювати рецепти."
+          }
+        }
+      }
+    },
+    "Vegan": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Веганське"
+          }
+        }
+      }
+    },
+    "Vegetarian": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вегетаріанське"
+          }
+        }
+      }
+    },
+    "What's in your kitchen?": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Що є на вашій кухні?"
+          }
+        }
+      }
+    },
+    "Writing your recipe and working out the nutrition.": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пишемо рецепт і рахуємо харчову цінність."
+          }
+        }
+      }
+    },
+    "e.g. chicken, rice, broccoli, garlic": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "напр. курка, рис, броколі, часник"
+          }
+        }
+      }
+    },
+    "g": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "г"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

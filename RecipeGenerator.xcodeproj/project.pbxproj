@@ -143,6 +143,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				uk,
 				Base,
 			);
 			mainGroup = 53948C132E60544600A9D58E;

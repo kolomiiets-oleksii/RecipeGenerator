@@ -13,6 +13,15 @@ struct FoundationModelsRecipeGenerator: RecipeGenerating {
         return IntelligenceError.modelUnavailable(reason).errorDescription
     }
 
+    /// Apple's model doesn't officially support every language. Where it doesn't (Ukrainian today), it still
+    /// accepts the ingredients but writes the recipe in English, so we say so instead of blocking.
+    var languageNotice: String? {
+        guard !SystemLanguageModel.default.supportsLocale(.current) else { return nil }
+        return String(
+            localized: "Apple Intelligence doesn't support your language yet. Recipes are written in English."
+        )
+    }
+
     func generate(from ingredients: String, dietary: Set<DietaryOption>) async throws -> GeneratedRecipe {
         if case .unavailable(let reason) = SystemLanguageModel.default.availability {
             throw IntelligenceError.modelUnavailable(reason)

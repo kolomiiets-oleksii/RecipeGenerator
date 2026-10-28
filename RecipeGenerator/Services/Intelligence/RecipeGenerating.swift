@@ -6,5 +6,12 @@ protocol RecipeGenerating {
     /// A message explaining why generation can't run right now, or `nil` if it can.
     var unavailabilityMessage: String? { get }
 
+    /// A note about a limitation that doesn't block generation, such as an unsupported language, or `nil`.
+    var languageNotice: String? { get }
+
     func generate(from ingredients: String, dietary: Set<DietaryOption>) async throws -> GeneratedRecipe
+}
+
+extension RecipeGenerating {
+    var languageNotice: String? { nil }
 }

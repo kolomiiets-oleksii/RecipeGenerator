@@ -24,6 +24,10 @@ final class GeneratorViewModel {
         generator.unavailabilityMessage
     }
 
+    var languageNotice: String? {
+        generator.languageNotice
+    }
+
     var canGenerate: Bool {
         unavailabilityMessage == nil
             && !trimmedIngredients.isEmpty

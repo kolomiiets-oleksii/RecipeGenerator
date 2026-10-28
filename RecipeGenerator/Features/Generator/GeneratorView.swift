@@ -23,6 +23,7 @@ struct GeneratorView: View {
                         dietaryOptions: viewModel.dietaryOptions,
                         onToggleDietaryOption: viewModel.toggle,
                         unavailabilityMessage: viewModel.unavailabilityMessage,
+                        languageNotice: viewModel.languageNotice,
                         canGenerate: viewModel.canGenerate,
                         onGenerate: viewModel.start
                     )

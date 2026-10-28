@@ -24,20 +24,20 @@ enum IntelligenceError: Error, LocalizedError {
         case .modelUnavailable(let reason):
             switch reason {
             case .appleIntelligenceNotEnabled:
-                "Turn on Apple Intelligence in Settings to generate recipes."
+                String(localized: "Turn on Apple Intelligence in Settings to generate recipes.")
             case .deviceNotEligible:
-                "This device doesn't support Apple Intelligence."
+                String(localized: "This device doesn't support Apple Intelligence.")
             case .modelNotReady:
-                "The on-device model is still getting ready. Try again in a few minutes."
+                String(localized: "The on-device model is still getting ready. Try again in a few minutes.")
             @unknown default:
-                "Apple Intelligence isn't available right now."
+                String(localized: "Apple Intelligence isn't available right now.")
             }
         case .contentRejected:
-            "That request couldn't be completed. Try different ingredients."
+            String(localized: "That request couldn't be completed. Try different ingredients.")
         case .inputTooLong:
-            "That ingredient list is too long. Try fewer ingredients."
+            String(localized: "That ingredient list is too long. Try fewer ingredients.")
         case .generationFailed:
-            "The recipe couldn't be generated. Please try again."
+            String(localized: "The recipe couldn't be generated. Please try again.")
         }
     }
 }
