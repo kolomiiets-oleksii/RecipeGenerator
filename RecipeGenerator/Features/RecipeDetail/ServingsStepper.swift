@@ -9,7 +9,7 @@ struct ServingsStepper: View {
         VStack(alignment: .leading, spacing: Design.Spacing.small) {
             Stepper(value: $servings, in: Recipe.servingsRange) {
                 Label {
-                    Text("^[\(servings) serving](inflect: true)")
+                    Text("\(servings) servings")
                 } icon: {
                     Image(systemName: "person.2")
                 }
