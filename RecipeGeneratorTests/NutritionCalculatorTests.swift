@@ -75,4 +75,22 @@ struct NutritionCalculatorTests {
         #expect(NutritionCalculator.suggestedServings(totalMass: 3_075) == 8)
         #expect(NutritionCalculator.suggestedServings(totalMass: 50_000) == 12)
     }
+
+    @Test("macro shares split energy 4/4/9 and add up to 1")
+    func macroShares() {
+        // 10 g protein = 40 kcal, 20 g carbs = 80 kcal, 10 g fat = 90 kcal; total 210 kcal.
+        let facts = NutritionFacts(energy: 210, protein: 10, carbs: 20, fiber: 0, sugar: 0, fat: 10, saturatedFat: 0)
+
+        let shares = facts.macroShares
+
+        #expect(shares.map(\.macro) == [.protein, .carbs, .fat])
+        #expect(shares.map(\.kilocalories) == [40, 80, 90])
+        #expect(abs(shares.reduce(0) { $0 + $1.fraction } - 1) < 0.0001)
+        #expect(abs(shares[2].fraction - 90.0 / 210.0) < 0.0001)
+    }
+
+    @Test("no macros means no shares")
+    func noMacroShares() {
+        #expect(NutritionFacts.zero.macroShares.isEmpty)
+    }
 }

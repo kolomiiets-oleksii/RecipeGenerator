@@ -31,6 +31,7 @@ struct RecipeContentView: View {
             .frame(maxWidth: Design.readableWidth)
             .frame(maxWidth: .infinity)
         }
+        .applyingDebugScroll()
     }
 }
 

@@ -10,6 +10,7 @@ import SwiftUI
     /// | `-presentGenerator` | Opens the New Recipe sheet |
     /// | `-stubGenerator success\|slow\|failure` | Replaces the model with a stub |
     /// | `-autoGenerate "chicken, rice"` | Fills the ingredients and starts generating |
+    /// | `-scrollToEnd` | Opens recipe screens scrolled to the bottom |
     /// | `-seedServings 4` | Sets the seeded recipe's serving count |
     /// | `-seedIngredient "Chicken breast=600"` | Sets one seeded ingredient's grams |
     enum DebugLaunchArguments {
@@ -23,6 +24,7 @@ import SwiftUI
         static var selectFirstRecipe: Bool { arguments.contains("-selectFirstRecipe") }
         static var presentGenerator: Bool { arguments.contains("-presentGenerator") }
         static var autoGenerate: String? { value(after: "-autoGenerate") }
+        static var scrollToEnd: Bool { arguments.contains("-scrollToEnd") }
         static var seedServings: Int? { value(after: "-seedServings").flatMap(Int.init) }
 
         /// `-seedIngredient "Chicken breast=600"` changes one seeded ingredient's grams.
@@ -71,6 +73,20 @@ extension View {
         #if DEBUG
             if let generator = DebugLaunchArguments.stubGenerator {
                 environment(\.recipeGenerator, generator)
+            } else {
+                self
+            }
+        #else
+            self
+        #endif
+    }
+
+    /// Starts scrolled to the bottom when `-scrollToEnd` is given (Debug only), so lower sections can be photographed.
+    @ViewBuilder
+    func applyingDebugScroll() -> some View {
+        #if DEBUG
+            if DebugLaunchArguments.scrollToEnd {
+                defaultScrollAnchor(.bottom)
             } else {
                 self
             }
