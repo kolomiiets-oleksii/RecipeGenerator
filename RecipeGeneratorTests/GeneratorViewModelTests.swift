@@ -84,4 +84,46 @@ struct GeneratorViewModelTests {
         #expect(viewModel.state == .idle)
         #expect(viewModel.ingredientsText == "chicken")
     }
+
+    @Test("toggling an option selects then deselects it")
+    func togglingOptions() {
+        let viewModel = GeneratorViewModel(generator: StubRecipeGenerator(result: .success(.sample)))
+
+        viewModel.toggle(.vegan)
+        #expect(viewModel.dietaryOptions == [.vegan])
+
+        viewModel.toggle(.glutenFree)
+        #expect(viewModel.dietaryOptions == [.vegan, .glutenFree])
+
+        viewModel.toggle(.vegan)
+        #expect(viewModel.dietaryOptions == [.glutenFree])
+    }
+
+    @Test("the chosen options are passed to the generator")
+    func optionsReachTheGenerator() async {
+        let generator = RecordingGenerator()
+        let viewModel = GeneratorViewModel(generator: generator)
+        viewModel.ingredientsText = "eggs"
+        viewModel.toggle(.nutFree)
+        viewModel.toggle(.vegetarian)
+
+        await viewModel.generate()
+
+        #expect(generator.lastDietary == [.nutFree, .vegetarian])
+        #expect(generator.lastIngredients == "eggs")
+    }
+}
+
+/// Remembers what it was asked for.
+@MainActor
+private final class RecordingGenerator: RecipeGenerating {
+    var unavailabilityMessage: String? { nil }
+    private(set) var lastIngredients: String?
+    private(set) var lastDietary: Set<DietaryOption>?
+
+    func generate(from ingredients: String, dietary: Set<DietaryOption>) async throws -> GeneratedRecipe {
+        lastIngredients = ingredients
+        lastDietary = dietary
+        return .sample
+    }
 }

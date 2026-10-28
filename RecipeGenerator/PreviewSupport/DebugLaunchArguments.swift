@@ -10,6 +10,7 @@ import SwiftUI
     /// | `-presentGenerator` | Opens the New Recipe sheet |
     /// | `-stubGenerator success\|slow\|failure` | Replaces the model with a stub |
     /// | `-autoGenerate "chicken, rice"` | Fills the ingredients and starts generating |
+    /// | `-dietary vegan,glutenFree` | Pre-selects dietary options |
     /// | `-scrollToEnd` | Opens recipe screens scrolled to the bottom |
     /// | `-seedServings 4` | Sets the seeded recipe's serving count |
     /// | `-seedIngredient "Chicken breast=600"` | Sets one seeded ingredient's grams |
@@ -24,6 +25,12 @@ import SwiftUI
         static var selectFirstRecipe: Bool { arguments.contains("-selectFirstRecipe") }
         static var presentGenerator: Bool { arguments.contains("-presentGenerator") }
         static var autoGenerate: String? { value(after: "-autoGenerate") }
+        /// `-dietary vegan,glutenFree` pre-selects dietary options.
+        static var dietary: Set<DietaryOption> {
+            guard let raw = value(after: "-dietary") else { return [] }
+            return Set(raw.split(separator: ",").compactMap { DietaryOption(rawValue: String($0)) })
+        }
+
         static var scrollToEnd: Bool { arguments.contains("-scrollToEnd") }
         static var seedServings: Int? { value(after: "-seedServings").flatMap(Int.init) }
 

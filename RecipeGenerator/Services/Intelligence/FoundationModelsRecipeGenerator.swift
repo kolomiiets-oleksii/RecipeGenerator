@@ -13,7 +13,7 @@ struct FoundationModelsRecipeGenerator: RecipeGenerating {
         return IntelligenceError.modelUnavailable(reason).errorDescription
     }
 
-    func generate(from ingredients: String) async throws -> GeneratedRecipe {
+    func generate(from ingredients: String, dietary: Set<DietaryOption>) async throws -> GeneratedRecipe {
         if case .unavailable(let reason) = SystemLanguageModel.default.availability {
             throw IntelligenceError.modelUnavailable(reason)
         }
@@ -22,7 +22,7 @@ struct FoundationModelsRecipeGenerator: RecipeGenerating {
 
         do {
             let response = try await session.respond(
-                to: RecipePrompts.prompt(ingredients: ingredients),
+                to: RecipePrompts.prompt(ingredients: ingredients, dietary: dietary),
                 generating: GeneratedRecipe.self
             )
             #if DEBUG

@@ -16,14 +16,26 @@ enum RecipePrompts {
         Every ingredient used in the steps, including oil, salt and spices, must appear in the ingredient list.
         """
 
-    static func prompt(ingredients: String) -> String {
-        """
-        Create a healthy recipe using these ingredients: \(ingredients)
+    static func prompt(ingredients: String, dietary: Set<DietaryOption> = []) -> String {
+        var requirements: [String] = []
 
-        Requirements:
-        - You may add common pantry items such as oil, salt or spices, but list every one you use as an ingredient
-        - Give every ingredient a realistic mass in grams for the whole recipe
-        - Write short, beginner-friendly steps, each with its timing
-        """
+        let chosen = DietaryOption.allCases.filter(dietary.contains)
+        if !chosen.isEmpty {
+            let list = chosen.map(\.promptDescription).formatted(.list(type: .and, width: .standard))
+            requirements.append("The recipe must be \(list). Leave out any given ingredient that does not fit")
+        }
+
+        requirements += [
+            "You may add common pantry items such as oil, salt or spices, but list every one you use as an ingredient",
+            "Give every ingredient a realistic mass in grams for the whole recipe",
+            "Write short, beginner-friendly steps, each with its timing",
+        ]
+
+        return """
+            Create a healthy recipe using these ingredients: \(ingredients)
+
+            Requirements:
+            \(requirements.map { "- \($0)" }.joined(separator: "\n"))
+            """
     }
 }

@@ -20,6 +20,8 @@ struct GeneratorView: View {
                 case .idle:
                     IngredientInputView(
                         text: $viewModel.ingredientsText,
+                        dietaryOptions: viewModel.dietaryOptions,
+                        onToggleDietaryOption: viewModel.toggle,
                         unavailabilityMessage: viewModel.unavailabilityMessage,
                         canGenerate: viewModel.canGenerate,
                         onGenerate: viewModel.start
@@ -61,6 +63,7 @@ struct GeneratorView: View {
         .onDisappear(perform: viewModel.cancel)
         #if DEBUG
             .task {
+                viewModel.setDietaryOptions(DebugLaunchArguments.dietary)
                 guard let ingredients = DebugLaunchArguments.autoGenerate else { return }
                 viewModel.ingredientsText = ingredients
                 viewModel.start()

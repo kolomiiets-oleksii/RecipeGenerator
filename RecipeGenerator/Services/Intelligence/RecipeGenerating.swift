@@ -6,5 +6,5 @@ protocol RecipeGenerating {
     /// A message explaining why generation can't run right now, or `nil` if it can.
     var unavailabilityMessage: String? { get }
 
-    func generate(from ingredients: String) async throws -> GeneratedRecipe
+    func generate(from ingredients: String, dietary: Set<DietaryOption>) async throws -> GeneratedRecipe
 }

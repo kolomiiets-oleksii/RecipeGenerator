@@ -16,7 +16,7 @@ struct StubRecipeGenerator: RecipeGenerating {
         self.unavailabilityMessage = unavailabilityMessage
     }
 
-    func generate(from ingredients: String) async throws -> GeneratedRecipe {
+    func generate(from ingredients: String, dietary: Set<DietaryOption>) async throws -> GeneratedRecipe {
         if delay > .zero {
             try await Task.sleep(for: delay)
         }

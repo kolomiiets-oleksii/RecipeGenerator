@@ -6,6 +6,7 @@ import Observation
 @Observable
 final class GeneratorViewModel {
     var ingredientsText = ""
+    private(set) var dietaryOptions: Set<DietaryOption> = []
     private(set) var state: GeneratorState = .idle
 
     private let generator: any RecipeGenerating
@@ -31,6 +32,19 @@ final class GeneratorViewModel {
 
     private var trimmedIngredients: String {
         ingredientsText.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    func toggle(_ option: DietaryOption) {
+        if dietaryOptions.contains(option) {
+            dietaryOptions.remove(option)
+        } else {
+            dietaryOptions.insert(option)
+        }
+    }
+
+    /// Sets the options directly (used by Debug launch arguments).
+    func setDietaryOptions(_ options: Set<DietaryOption>) {
+        dietaryOptions = options
     }
 
     /// Starts generation in a task the view model owns, so it can be cancelled.
@@ -72,7 +86,7 @@ final class GeneratorViewModel {
 
     private func perform(_ runID: UUID) async {
         do {
-            let generated = try await generator.generate(from: trimmedIngredients)
+            let generated = try await generator.generate(from: trimmedIngredients, dietary: dietaryOptions)
             guard currentRunID == runID else { return }
             state = .generated(Recipe(generated: generated))
         } catch {
