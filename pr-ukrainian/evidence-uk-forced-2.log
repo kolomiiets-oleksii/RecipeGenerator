@@ -1,0 +1,23 @@
+[PROBE] supportsLocale(uk_UA) = false
+[PROBE] supportsLocale(en_US) = true
+[PROBE] supportsLocale(pl_PL) = false
+[PROBE] supportsLocale(ru_RU) = false
+[PROBE] supportsLocale(de_DE) = true
+[PROBE] current locale = en_US supports = true availability = available
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+2026-10-28 21:16:12.324 RecipeGenerator[77558:26675055] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 21:16:12.324 RecipeGenerator[77558:26675055] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+[GEN] Зручна вечеря з куриною та овочами
+[GEN] ingredient кур | 450.0 g | 165.0 kcal/100g | P 31.0 C 1.6 F 3.6
+[GEN] ingredient рис | 250.0 g | 130.0 kcal/100g | P 2.7 C 27.0 F 0.8
+[GEN] ingredient брусок | 150.0 g | 34.0 kcal/100g | P 2.6 C 4.8 F 0.2
+[GEN] ingredient лук | 30.0 g | 14.0 kcal/100g | P 1.2 C 1.1 F 0.3
+[GEN] ingredient жир | 15.0 g | 980.0 kcal/100g | P 0.0 C 0.0 F 100.0
+[GEN] ingredient соль | 1.0 g | 16.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] ingredient порошок харчових добавок | 0.5 g | 155.0 kcal/100g | P 20.0 C 10.0 F 1.5
+[GEN] step Розбийте куріну на шматочки та обсмажте на свіжому жирі протягом 5 хвилин.
+[GEN] step Додайте лук і обсмажте ще 3 хвилин.
+[GEN] step Додайте брусок і обсмажте 5 хвилин.
+[GEN] step Додайте рис і обсмажте 3 хвилин.
+[GEN] step Додайте соль і порошок харчових добавок, перемішайте і приготуйте на пливі 10 хвилин.
+io.snappmobile.RecipeGenerator: 77558

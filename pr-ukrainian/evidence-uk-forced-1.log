@@ -1,0 +1,25 @@
+[PROBE] supportsLocale(uk_UA) = false
+[PROBE] supportsLocale(en_US) = true
+[PROBE] supportsLocale(pl_PL) = false
+[PROBE] supportsLocale(ru_RU) = false
+[PROBE] supportsLocale(de_DE) = true
+[PROBE] current locale = en_US supports = true availability = available
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+2026-10-28 21:15:00.351 RecipeGenerator[75297:26667748] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 21:15:00.351 RecipeGenerator[75297:26667748] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+[GEN] Смачний раціон з куриною та овочами
+[GEN] ingredient кур | 400.0 g | 165.0 kcal/100g | P 31.0 C 1.0 F 3.6
+[GEN] ingredient рис | 250.0 g | 116.0 kcal/100g | P 2.7 C 21.0 F 0.1
+[GEN] ingredient брокілі | 150.0 g | 34.0 kcal/100g | P 2.9 C 5.0 F 0.6
+[GEN] ingredient лук | 30.0 g | 14.0 kcal/100g | P 1.2 C 0.4 F 0.2
+[GEN] ingredient жир | 15.0 g | 988.0 kcal/100g | P 0.0 C 0.0 F 91.0
+[GEN] ingredient соль | 5.0 g | 16.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] ingredient порошок куриного смаку | 1.0 g | 26.0 kcal/100g | P 1.4 C 0.0 F 0.1
+[GEN] step Розмістіть купу на сковотулю на високому вогні.
+[GEN] step Додайте лук та обсмажте протягом 2 хвилин.
+[GEN] step Додайте курячу грудку та смажте приблизно 5 хвилин.
+[GEN] step Додайте рис та обсмажте ще 3 хвилин.
+[GEN] step Додайте брокілій та смажте на високому вогні протягом 4 хвилин.
+[GEN] step Додайте масло, соль та порошок куриного смаку, обсмажте ще 2 хвилин.
+[GEN] step Відкладіть на кілька хвилин, щоб смак розвивався.
+io.snappmobile.RecipeGenerator: 75297
