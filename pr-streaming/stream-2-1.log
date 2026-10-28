@@ -1,0 +1,19 @@
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+2026-10-28 22:14:23.296 RecipeGenerator[17505:27030371] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 22:14:23.296 RecipeGenerator[17505:27030371] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+[GEN] first 22.34 sec total 60.80 sec
+[GEN] Savory Chicken & Veggie Bowl
+[GEN] ingredient chicken | 500.0 g | 165.0 kcal/100g | P 31.0 C 0.0 F 3.6
+[GEN] ingredient rice | 300.0 g | 130.0 kcal/100g | P 2.0 C 27.0 F 0.4
+[GEN] ingredient broccoli | 200.0 g | 34.0 kcal/100g | P 2.9 C 3.7 F 0.3
+[GEN] ingredient garlic | 15.0 g | 14.0 kcal/100g | P 1.0 C 0.2 F 0.1
+[GEN] ingredient olive oil | 15.0 g | 884.0 kcal/100g | P 0.0 C 0.0 F 91.0
+[GEN] ingredient salt | 1.0 g | 16.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] ingredient black pepper | 1.0 g | 26.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] step Heat olive oil for 5 minutes.
+[GEN] step Add garlic and cook for 1 minute.
+[GEN] step Add chicken and cook for 5 minutes.
+[GEN] step Add broccoli and cook for 3 minutes.
+[GEN] step Add rice and stir for 2 minutes.
+[GEN] step Season with salt and black pepper and stir for 1 minute.
+io.snappmobile.RecipeGenerator: 17505
