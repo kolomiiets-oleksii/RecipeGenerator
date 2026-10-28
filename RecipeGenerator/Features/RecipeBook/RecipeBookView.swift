@@ -51,6 +51,12 @@ struct RecipeBookView: View {
         .sheet(isPresented: $isGeneratorPresented) {
             GeneratorView(generator: recipeGenerator, onSave: save)
         }
+        #if DEBUG
+            .task {
+                if DebugLaunchArguments.selectFirstRecipe { selection = recipes.first?.id }
+                if DebugLaunchArguments.presentGenerator { isGeneratorPresented = true }
+            }
+        #endif
     }
 
     private func save(_ recipe: Recipe) {

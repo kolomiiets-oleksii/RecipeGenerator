@@ -59,6 +59,13 @@ struct GeneratorView: View {
         .interactiveDismissDisabled(viewModel.state.isGenerating)
         .presentationSizing(.page)
         .onDisappear(perform: viewModel.cancel)
+        #if DEBUG
+            .task {
+                guard let ingredients = DebugLaunchArguments.autoGenerate else { return }
+                viewModel.ingredientsText = ingredients
+                viewModel.start()
+            }
+        #endif
     }
 
     private func cancel() {

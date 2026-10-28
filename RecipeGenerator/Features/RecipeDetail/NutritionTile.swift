@@ -8,14 +8,14 @@ struct NutritionTile: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: Design.Spacing.small) {
-            Image(systemName: systemImage)
-                .font(.title3)
-                .foregroundStyle(tint)
-                .accessibilityHidden(true)
-
-            Text(title)
-                .font(.footnote)
-                .foregroundStyle(.secondary)
+            Label {
+                Text(title)
+            } icon: {
+                Image(systemName: systemImage)
+                    .foregroundStyle(tint)
+            }
+            .font(.footnote)
+            .foregroundStyle(.secondary)
 
             value
                 .font(.headline)

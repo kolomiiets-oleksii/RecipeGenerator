@@ -8,6 +8,12 @@ struct RecipeGeneratorApp: App {
     init() {
         // Hosted unit tests launch the app too; keep them off the real store.
         let isRunningTests = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+        #if DEBUG
+            if DebugLaunchArguments.seedSampleData {
+                container = .preview
+                return
+            }
+        #endif
         do {
             container = try ModelContainerFactory.make(inMemory: isRunningTests)
         } catch {
@@ -18,6 +24,7 @@ struct RecipeGeneratorApp: App {
     var body: some Scene {
         WindowGroup {
             RecipeBookView()
+                .applyingDebugLaunchArguments()
         }
         .modelContainer(container)
     }

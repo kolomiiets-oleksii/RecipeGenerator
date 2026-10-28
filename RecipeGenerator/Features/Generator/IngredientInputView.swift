@@ -62,6 +62,7 @@ struct IngredientInputView: View {
         }
         .scrollDismissesKeyboard(.interactively)
         .onAppear { isFocused = true }
+        .onDisappear { isFocused = false }
     }
 }
 
