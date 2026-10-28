@@ -1,0 +1,17 @@
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+[GEN] first 17.80 sec total 53.88 sec
+[GEN] Simple Chicken Stir-Fry
+[GEN] ingredient chicken | 500.0 g | 165.0 kcal/100g | P 31.0 C 0.0 F 3.6
+[GEN] ingredient rice | 250.0 g | 130.0 kcal/100g | P 2.7 C 27.0 F 0.3
+[GEN] ingredient broccoli | 200.0 g | 34.0 kcal/100g | P 2.9 C 5.0 F 0.2
+[GEN] ingredient garlic | 10.0 g | 14.0 kcal/100g | P 0.2 C 1.5 F 0.1
+[GEN] ingredient olive oil | 15.0 g | 998.0 kcal/100g | P 0.0 C 0.0 F 91.5
+[GEN] ingredient salt | 1.0 g | 16.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] ingredient black pepper | 0.5 g | 26.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] step Heat olive oil for 5 minutes.
+[GEN] step Add minced garlic and cook for 1 minute.
+[GEN] step Add chicken and stir for 5 minutes.
+[GEN] step Add broccoli and cook for 3 minutes.
+[GEN] step Stir in cooked rice and season with salt and pepper.
+[GEN] step Cook for 2 minutes.
+io.snappmobile.RecipeGenerator: 93911
