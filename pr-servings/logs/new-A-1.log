@@ -1,0 +1,17 @@
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+2026-10-28 13:08:44.758 RecipeGenerator[13508:24841247] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 13:08:44.758 RecipeGenerator[13508:24841247] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+[GEN] Herb-Crusted Chicken with Broccoli Rice | servings 2
+[GEN] ingredient chicken breast | 400.0 g | 165.0 kcal/100g | P 31.0 C 0.0 F 3.6
+[GEN] ingredient rice | 200.0 g | 360.0 kcal/100g | P 13.0 C 77.0 F 0.0
+[GEN] ingredient broccoli | 150.0 g | 34.0 kcal/100g | P 2.9 C 5.5 F 0.2
+[GEN] ingredient garlic | 10.0 g | 14.0 kcal/100g | P 1.8 C 1.7 F 0.1
+[GEN] ingredient olive oil | 15.0 g | 988.0 kcal/100g | P 0.0 C 0.0 F 98.8
+[GEN] ingredient salt | 1.0 g | 0.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] ingredient black pepper | 0.5 g | 2.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] step Heat olive oil in a pan for 5 minutes.
+[GEN] step Add chicken breast and cook for 8 minutes.
+[GEN] step Add garlic, salt, and black pepper; cook for 1 minute.
+[GEN] step Add broccoli and cook for 5 minutes.
+[GEN] step Cook rice according to package instructions for 20 minutes.
+io.snappmobile.RecipeGenerator: 13508

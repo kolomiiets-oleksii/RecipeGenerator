@@ -1,0 +1,17 @@
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+2026-10-28 13:23:41.496 RecipeGenerator[33973:24913106] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 13:23:41.496 RecipeGenerator[33973:24913106] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+[GEN] Grilled Chicken with Vegetables and Rice
+[GEN] ingredient chicken breast | 450.0 g | 165.0 kcal/100g | P 31.0 C 0.0 F 3.6
+[GEN] ingredient rice | 250.0 g | 130.0 kcal/100g | P 2.0 C 27.0 F 0.2
+[GEN] ingredient broccoli | 150.0 g | 34.0 kcal/100g | P 2.8 C 3.7 F 0.3
+[GEN] ingredient garlic | 10.0 g | 14.0 kcal/100g | P 1.0 C 1.0 F 0.1
+[GEN] ingredient olive oil | 15.0 g | 998.0 kcal/100g | P 0.0 C 0.0 F 91.5
+[GEN] ingredient salt | 1.0 g | 0.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] ingredient black pepper | 0.5 g | 26.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] step Prepare the chicken by seasoning it with salt, pepper, and minced garlic, then let it rest for 5 minutes.
+[GEN] step Heat olive oil in a skillet over medium heat for 3 minutes, then cook the chicken for 8 minutes.
+[GEN] step Add broccoli to the skillet and cook for 5 minutes, stirring occasionally.
+[GEN] step Cook the rice according to package instructions for 15 minutes.
+[GEN] step Serve the chicken and broccoli alongside the cooked rice.
+io.snappmobile.RecipeGenerator: 33973

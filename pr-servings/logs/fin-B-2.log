@@ -1,0 +1,19 @@
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+2026-10-28 13:26:19.608 RecipeGenerator[36996:24926621] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 13:26:19.608 RecipeGenerator[36996:24926621] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+[GEN] Simple Tomato Pasta
+[GEN] ingredient pasta | 400.0 g | 170.0 kcal/100g | P 8.0 C 65.0 F 0.5
+[GEN] ingredient tomatoes | 200.0 g | 18.0 kcal/100g | P 1.0 C 3.9 F 0.2
+[GEN] ingredient onion | 50.0 g | 16.0 kcal/100g | P 1.0 C 2.4 F 0.1
+[GEN] ingredient eggs | 150.0 g | 155.0 kcal/100g | P 13.0 C 1.2 F 13.0
+[GEN] ingredient olive oil | 5.0 g | 958.0 kcal/100g | P 0.0 C 0.0 F 94.0
+[GEN] ingredient salt | 0.5 g | 16.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] ingredient black pepper | 0.2 g | 26.0 kcal/100g | P 0.0 C 0.7 F 0.0
+[GEN] step Heat olive oil in a pan for 5 minutes.
+[GEN] step Add chopped onion and cook for 3 minutes.
+[GEN] step Add chopped tomatoes and simmer for 10 minutes.
+[GEN] step Crack eggs into a bowl and whisk lightly.
+[GEN] step Add eggs to the sauce and stir gently for 2 minutes.
+[GEN] step Toss cooked pasta with the sauce and season with salt and pepper.
+[GEN] step Serve immediately.
+io.snappmobile.RecipeGenerator: 36996

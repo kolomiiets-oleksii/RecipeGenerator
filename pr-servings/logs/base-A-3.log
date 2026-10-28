@@ -1,0 +1,13 @@
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+2026-10-28 13:06:03.310 RecipeGenerator[9400:24828181] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 13:06:03.310 RecipeGenerator[9400:24828181] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+[GEN] Simple Chicken Stir-Fry | servings 4
+[GEN] ingredient chicken breast | 400.0 g | 165.0 kcal/100g | P 31.0 C 0.0 F 3.6
+[GEN] ingredient rice | 300.0 g | 130.0 kcal/100g | P 4.0 C 27.0 F 0.3
+[GEN] ingredient broccoli | 150.0 g | 34.0 kcal/100g | P 2.9 C 5.0 F 0.6
+[GEN] ingredient garlic | 15.0 g | 14.0 kcal/100g | P 1.1 C 0.2 F 0.1
+[GEN] step Heat olive oil for 5 minutes, then add chicken and cook for 8 minutes.
+[GEN] step Add broccoli and stir-fry for 5 minutes.
+[GEN] step Stir in garlic and cook for 1 minute.
+[GEN] step Serve over cooked rice and stir gently for 2 minutes.
+io.snappmobile.RecipeGenerator: 9400

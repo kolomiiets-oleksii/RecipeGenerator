@@ -1,0 +1,13 @@
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+2026-10-28 13:07:49.794 RecipeGenerator[11631:24835882] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 13:07:49.794 RecipeGenerator[11631:24835882] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+[GEN] Simple Tomato Pasta | servings 4
+[GEN] ingredient pasta | 400.0 g | 170.0 kcal/100g | P 8.0 C 45.0 F 0.8
+[GEN] ingredient tomatoes | 250.0 g | 19.0 kcal/100g | P 1.0 C 1.9 F 0.2
+[GEN] ingredient onion | 150.0 g | 42.0 kcal/100g | P 1.0 C 9.0 F 0.3
+[GEN] ingredient eggs | 150.0 g | 155.0 kcal/100g | P 13.0 C 1.1 F 13.0
+[GEN] step Chop onion and sauté for 5 minutes.
+[GEN] step Add chopped tomatoes and cook for 10 minutes.
+[GEN] step Add pasta and eggs, stir gently for 3 minutes.
+[GEN] step Season with salt and serve warm.
+io.snappmobile.RecipeGenerator: 11631

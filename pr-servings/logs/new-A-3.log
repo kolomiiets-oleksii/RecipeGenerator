@@ -1,0 +1,16 @@
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+2026-10-28 13:10:18.944 RecipeGenerator[15467:24848010] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 13:10:18.944 RecipeGenerator[15467:24848010] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+[GEN] Grilled Chicken with Steamed Broccoli and Rice | servings 4
+[GEN] ingredient chicken breast | 1200.0 g | 165.0 kcal/100g | P 31.0 C 0.0 F 3.6
+[GEN] ingredient rice | 1200.0 g | 360.0 kcal/100g | P 13.0 C 77.0 F 0.2
+[GEN] ingredient broccoli | 600.0 g | 34.0 kcal/100g | P 2.9 C 3.7 F 0.3
+[GEN] ingredient olive oil | 40.0 g | 988.0 kcal/100g | P 0.0 C 0.0 F 98.8
+[GEN] ingredient garlic | 20.0 g | 14.0 kcal/100g | P 0.5 C 0.3 F 0.1
+[GEN] ingredient salt | 10.0 g | 0.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] ingredient black pepper | 5.0 g | 0.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] step Rub chicken with olive oil, garlic, salt and pepper, then grill for 15 minutes.
+[GEN] step Steam broccoli for 5 minutes.
+[GEN] step Cook rice according to package instructions.
+[GEN] step Serve chicken, broccoli and rice together.
+io.snappmobile.RecipeGenerator: 15467
