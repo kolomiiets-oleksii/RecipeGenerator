@@ -1,0 +1,15 @@
+opt-default: runs=4 plausible=4
+   chicken   kcal/100g min 165 max 165 spread 0 n=4
+   rice      kcal/100g min 111 max 130 spread 19 n=4
+   broccoli  kcal/100g min 34 max 34 spread 0 n=4
+   garlic    kcal/100g min 14 max 14 spread 0 n=4
+opt-t03: runs=4 plausible=4
+   chicken   kcal/100g min 165 max 165 spread 0 n=4
+   rice      kcal/100g min 116 max 130 spread 14 n=4
+   broccoli  kcal/100g min 34 max 34 spread 0 n=4
+   garlic    kcal/100g min 14 max 14 spread 0 n=4
+opt-greedy: runs=4 plausible=4
+   chicken   kcal/100g min 165 max 165 spread 0 n=4
+   rice      kcal/100g min 130 max 130 spread 0 n=4
+   broccoli  kcal/100g min 34 max 34 spread 0 n=4
+   garlic    kcal/100g min 14 max 14 spread 0 n=4
