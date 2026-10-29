@@ -41,5 +41,25 @@ and when Xcode asks, trust the `#Playground` macro. Until it is trusted, the bui
   in code (`NutritionCalculator`, `FoodReference`).
 - Keep instructions short and concrete; every sentence costs context in a 4096-token window.
 - Measure with the same ingredient list several times. One good run proves nothing.
-- Not covered yet: profiling first-token latency and tokens per second with the Foundation Models template in
-  Instruments, which needs the Instruments app.
+
+## Profile (Instruments, Foundation Models template)
+
+One generation in the iPhone simulator (iOS 27.1) for "chicken, rice, broccoli, garlic", recorded with the Foundation
+Models instrument in Deferred mode:
+
+| | |
+| --- | --- |
+| Requests | 1 (one session) |
+| Request and Model Inference duration | 74.17 s |
+| Tokens | 1825 (as counted by the instrument) |
+| Throughput | about 24.6 tokens per second (1825 / 74.17) |
+
+Read off the timeline: Model Loading events appear at the start of the request, so this was a cold run. Model Inference
+shows two stretches, about 16 s followed by about 59 s. The app's own log for warm runs puts the first snapshot at about
+3 to 9 s and the whole recipe at 37 to 50 s, so this run is slower than usual. A cold model and profiler overhead are
+the likely reasons, though I did not isolate either.
+
+Caveats: one run, simulator, a profiler attached, and the first-token time is not shown as a number by the instrument
+in this view, so the app's log (`[GEN] first ... total ...`) remains the source for first-output times. The instrument
+labels the instructions and prompt "No instructions" and "No prompt", so it does not record their text by default.
+
