@@ -4,7 +4,11 @@ import FoundationModels
 /// Generates recipes with Apple's on-device language model.
 ///
 /// - Note: Requires a device with Apple Intelligence enabled.
-struct FoundationModelsRecipeGenerator: RecipeGenerating {
+final class FoundationModelsRecipeGenerator: RecipeGenerating {
+
+    /// A session warmed up before the person tapped Generate. Used once, then discarded, so one recipe never
+    /// sees the previous one in its transcript.
+    private var prewarmedSession: LanguageModelSession?
 
     var unavailabilityMessage: String? {
         guard case .unavailable(let reason) = SystemLanguageModel.default.availability else {
@@ -22,6 +26,13 @@ struct FoundationModelsRecipeGenerator: RecipeGenerating {
         )
     }
 
+    func prewarm() {
+        guard prewarmedSession == nil, case .available = SystemLanguageModel.default.availability else { return }
+        let session = LanguageModelSession(instructions: RecipePrompts.instructions)
+        session.prewarm(promptPrefix: Prompt(RecipePrompts.promptLead))
+        prewarmedSession = session
+    }
+
     func generate(
         from ingredients: String,
         dietary: Set<DietaryOption>,
@@ -31,7 +42,8 @@ struct FoundationModelsRecipeGenerator: RecipeGenerating {
             throw IntelligenceError.modelUnavailable(reason)
         }
 
-        let session = LanguageModelSession(instructions: RecipePrompts.instructions)
+        let session = prewarmedSession ?? LanguageModelSession(instructions: RecipePrompts.instructions)
+        prewarmedSession = nil
         let prompt = RecipePrompts.prompt(ingredients: ingredients, dietary: dietary)
 
         #if DEBUG

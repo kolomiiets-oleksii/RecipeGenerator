@@ -99,6 +99,16 @@ struct GeneratorViewModelTests {
         #expect(viewModel.progress == .empty)
     }
 
+    @Test("prewarming is forwarded to the generator")
+    func prewarmIsForwarded() {
+        let generator = RecordingGenerator()
+        let viewModel = GeneratorViewModel(generator: generator)
+
+        viewModel.prewarm()
+
+        #expect(generator.prewarmCount == 1)
+    }
+
     @Test("toggling an option selects then deselects it")
     func togglingOptions() {
         let viewModel = GeneratorViewModel(generator: StubRecipeGenerator(result: .success(.sample)))
@@ -132,8 +142,13 @@ struct GeneratorViewModelTests {
 @MainActor
 private final class RecordingGenerator: RecipeGenerating {
     var unavailabilityMessage: String? { nil }
+    private(set) var prewarmCount = 0
     private(set) var lastIngredients: String?
     private(set) var lastDietary: Set<DietaryOption>?
+
+    func prewarm() {
+        prewarmCount += 1
+    }
 
     func generate(
         from ingredients: String,

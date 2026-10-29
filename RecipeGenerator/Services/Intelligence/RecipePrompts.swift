@@ -16,6 +16,9 @@ enum RecipePrompts {
         Every ingredient used in the steps, including oil, salt and spices, must appear in the ingredient list.
         """
 
+    /// The start of every prompt. Handed to the model while the person is still typing.
+    static let promptLead = "Create a healthy recipe using these ingredients: "
+
     static func prompt(ingredients: String, dietary: Set<DietaryOption> = []) -> String {
         var requirements: [String] = []
 
@@ -32,7 +35,7 @@ enum RecipePrompts {
         ]
 
         return """
-            Create a healthy recipe using these ingredients: \(ingredients)
+            \(promptLead)\(ingredients)
 
             Requirements:
             \(requirements.map { "- \($0)" }.joined(separator: "\n"))
