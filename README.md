@@ -9,11 +9,11 @@ Foundation Models writes a recipe with every ingredient in grams. The app, not t
 Everything runs on the device: no server, no account, no network.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kolomiiets-oleksii/RecipeGenerator/a59b8f68de386d3e90e559946766e434f305f641/readme/demo-uk.gif" width="300" alt="Generating a recipe, saving it, and reading its nutrition, in Ukrainian">
+  <img src="https://raw.githubusercontent.com/kolomiiets-oleksii/RecipeGenerator/0257450e13ddf9b3aafd090b97860f68e5e07592/readme/demo-en.gif" width="300" alt="Generating a recipe, saving it, and reading its nutrition">
 </p>
 
-[Full-quality video](https://raw.githubusercontent.com/kolomiiets-oleksii/RecipeGenerator/a59b8f68de386d3e90e559946766e434f305f641/readme/demo-uk.mp4)
-(Ukrainian UI, iPhone simulator, stubbed generator).
+[Full-quality video](https://raw.githubusercontent.com/kolomiiets-oleksii/RecipeGenerator/0257450e13ddf9b3aafd090b97860f68e5e07592/readme/demo-en.mp4)
+(iPhone simulator, stubbed generator).
 
 ## What it does
 
