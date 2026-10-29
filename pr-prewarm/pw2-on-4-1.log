@@ -1,0 +1,19 @@
+2026-10-29 15:42:07.454 RecipeGenerator[8532:29413584] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-29 15:42:07.454 RecipeGenerator[8532:29413584] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+[GEN] first 3.67 sec total 38.68 sec
+[GEN] Simple Chicken & Veggie Bowl
+[GEN] ingredient chicken | 400.0 g | 165.0 kcal/100g | P 31.0 C 0.0 F 3.6
+[GEN] ingredient rice | 250.0 g | 130.0 kcal/100g | P 2.7 C 27.0 F 0.4
+[GEN] ingredient broccoli | 150.0 g | 34.0 kcal/100g | P 2.9 C 5.0 F 0.6
+[GEN] ingredient garlic | 10.0 g | 14.0 kcal/100g | P 1.0 C 0.3 F 0.8
+[GEN] ingredient olive oil | 15.0 g | 998.0 kcal/100g | P 0.0 C 0.0 F 91.5
+[GEN] ingredient salt | 1.0 g | 2.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] ingredient black pepper | 0.5 g | 2.0 kcal/100g | P 0.0 C 0.0 F 0.0
+[GEN] step Heat olive oil in a pan for 5 minutes.
+[GEN] step Add garlic and cook for 1 minute.
+[GEN] step Add chicken and brown for 6 minutes.
+[GEN] step Add broccoli and cook for 5 minutes.
+[GEN] step Add rice and stir for 3 minutes.
+[GEN] step Season with salt and pepper, then cook for 2 minutes.
+io.snappmobile.RecipeGenerator: 8532
