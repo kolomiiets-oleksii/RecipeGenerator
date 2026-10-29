@@ -723,6 +723,17 @@
         }
       }
     },
+    "Writing step %lld…": {
+      "extractionState": "manual",
+      "localizations": {
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пишемо крок %lld…"
+          }
+        }
+      }
+    },
     "Writing your recipe and working out the nutrition.": {
       "extractionState": "manual",
       "localizations": {

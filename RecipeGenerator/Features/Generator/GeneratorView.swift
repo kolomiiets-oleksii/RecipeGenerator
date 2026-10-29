@@ -29,7 +29,7 @@ struct GeneratorView: View {
                     )
 
                 case .generating:
-                    GeneratingProgressView(onCancel: viewModel.cancel)
+                    GeneratingProgressView(progress: viewModel.progress, onCancel: viewModel.cancel)
 
                 case .generated(let recipe):
                     GeneratedRecipeReview(

@@ -85,6 +85,20 @@ struct GeneratorViewModelTests {
         #expect(viewModel.ingredientsText == "chicken")
     }
 
+    @Test("progress from the generator is exposed while generating, and cleared for the next run")
+    func progressIsExposed() async {
+        let generator = ProgressGenerator()
+        let viewModel = GeneratorViewModel(generator: generator)
+        viewModel.ingredientsText = "eggs"
+
+        await viewModel.generate()
+        #expect(viewModel.progress == RecipeProgress(title: "Omelette", ingredientNames: ["Egg"], stepCount: 1))
+
+        viewModel.reset()
+        viewModel.start()
+        #expect(viewModel.progress == .empty)
+    }
+
     @Test("toggling an option selects then deselects it")
     func togglingOptions() {
         let viewModel = GeneratorViewModel(generator: StubRecipeGenerator(result: .success(.sample)))
@@ -121,9 +135,28 @@ private final class RecordingGenerator: RecipeGenerating {
     private(set) var lastIngredients: String?
     private(set) var lastDietary: Set<DietaryOption>?
 
-    func generate(from ingredients: String, dietary: Set<DietaryOption>) async throws -> GeneratedRecipe {
+    func generate(
+        from ingredients: String,
+        dietary: Set<DietaryOption>,
+        onProgress: (RecipeProgress) -> Void
+    ) async throws -> GeneratedRecipe {
         lastIngredients = ingredients
         lastDietary = dietary
+        return .sample
+    }
+}
+
+/// Reports one progress update, then returns a recipe.
+@MainActor
+private struct ProgressGenerator: RecipeGenerating {
+    var unavailabilityMessage: String? { nil }
+
+    func generate(
+        from ingredients: String,
+        dietary: Set<DietaryOption>,
+        onProgress: (RecipeProgress) -> Void
+    ) async throws -> GeneratedRecipe {
+        onProgress(RecipeProgress(title: "Omelette", ingredientNames: ["Egg"], stepCount: 1))
         return .sample
     }
 }
