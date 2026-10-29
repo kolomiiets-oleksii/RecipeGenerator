@@ -40,6 +40,8 @@ without a phone. Image creation will report that it isn't available.
 2. Xcode asks you to trust the `SwiftFormatLintPlugin` build tool plugin (it lints the sources while building).
    Choose *Trust & Enable*. From the command line, pass `-skipPackagePluginValidation` to `xcodebuild`.
 3. Run on an iPhone or iPad (Cmd+R). Run the tests with Cmd+U.
+4. To iterate on the prompt, run a `#Playground` from `PreviewSupport/RecipePromptPlaygrounds.swift`
+   (trust the macro when asked). See `docs/prompting.md`.
 
 ## Languages
 
