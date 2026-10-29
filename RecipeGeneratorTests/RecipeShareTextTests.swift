@@ -40,9 +40,9 @@ struct RecipeShareTextTests {
 
     @Test("ends with per-serving nutrition")
     func nutrition() {
-        #expect(text.contains("Energy: 564 kcal"))
-        #expect(text.contains("Protein: 53.5 g"))
-        #expect(text.hasSuffix("Saturated Fat: 2.8 g"))
+        #expect(text.contains("Energy: 499 kcal"))
+        #expect(text.contains("Protein: 40.8 g"))
+        #expect(text.hasSuffix("Saturated Fat: 2.1 g"))
     }
 
     @Test("handles a recipe without steps or summary")

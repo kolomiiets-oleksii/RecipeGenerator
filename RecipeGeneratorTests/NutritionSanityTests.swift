@@ -94,7 +94,7 @@ struct NutritionSanityTests {
     @Test("mapping a generated ingredient applies the rules")
     func mappingAppliesRules() {
         let generated = GeneratedIngredient(
-            name: "Rice",
+            name: "Test grain",
             grams: 250,
             energyPer100g: 600,
             proteinPer100g: 7,

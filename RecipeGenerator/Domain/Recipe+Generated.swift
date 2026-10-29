@@ -1,7 +1,9 @@
 import Foundation
 
 extension Ingredient {
-    /// Maps one model-generated ingredient, fixing values that cannot be true.
+    /// Maps one model-generated ingredient. Values for foods in `FoodReference` are replaced by the reference
+    /// values, because the model recalls them inconsistently (cooked values for dry rice, 14 kcal for garlic).
+    /// For any other food the model's values are kept, with those that cannot be true fixed.
     convenience init(generated: GeneratedIngredient, order: Int) {
         let reported = NutritionFacts(
             energy: generated.energyPer100g,
@@ -12,11 +14,12 @@ extension Ingredient {
             fat: generated.fatPer100g,
             saturatedFat: generated.saturatedFatPer100g
         )
+        let name = generated.name.trimmingCharacters(in: .whitespacesAndNewlines)
         self.init(
-            name: generated.name.trimmingCharacters(in: .whitespacesAndNewlines),
+            name: name,
             grams: max(generated.grams, 0),
             order: order,
-            per100g: reported.sanitizedPer100g
+            per100g: FoodReference.facts(forIngredient: name) ?? reported.sanitizedPer100g
         )
     }
 }
