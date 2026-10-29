@@ -19,6 +19,45 @@ struct RecipeMappingTests {
         #expect(recipe.steps.count == 4)
     }
 
+    @Test("reference values replace the model's for foods in the table, and only for those")
+    func referenceValuesReplaceRecall() throws {
+        // Macros agree with the energy, so the sanity rules leave the model's values alone.
+        func ingredient(
+            _ name: String,
+            energy: Double,
+            protein: Double,
+            carbs: Double,
+            fat: Double
+        ) -> GeneratedIngredient {
+            GeneratedIngredient(
+                name: name,
+                grams: 100,
+                energyPer100g: energy,
+                proteinPer100g: protein,
+                carbsPer100g: carbs,
+                fiberPer100g: 0,
+                sugarPer100g: 0,
+                fatPer100g: fat,
+                saturatedFatPer100g: 0
+            )
+        }
+        let generated = GeneratedRecipe(
+            title: "Test",
+            summary: "",
+            ingredients: [
+                ingredient("Garlic", energy: 14, protein: 0.5, carbs: 2.5, fat: 0.1),
+                ingredient("Cooked rice", energy: 130, protein: 2.7, carbs: 28, fat: 0.3),
+                ingredient("Chicken broth", energy: 5, protein: 1, carbs: 0.2, fat: 0.1),
+            ],
+            steps: ["Cook."]
+        )
+
+        let recipe = Recipe(generated: generated)
+        let energies = recipe.sortedIngredients.map(\.per100g.energy)
+
+        #expect(energies == [149, 130, 5])
+    }
+
     @Test("drops blank ingredients and steps, trims text, and clamps negatives")
     func sanitizesGeneratedValues() {
         let generated = GeneratedRecipe(
@@ -26,7 +65,7 @@ struct RecipeMappingTests {
             summary: "",
             ingredients: [
                 GeneratedIngredient(
-                    name: "  Carrot ",
+                    name: "  Dragonfruit ",
                     grams: -10,
                     energyPer100g: -1,
                     proteinPer100g: 1,
@@ -56,7 +95,7 @@ struct RecipeMappingTests {
         #expect(recipe.title == "Soup")
         #expect(recipe.servings == 1)
         #expect(recipe.sortedIngredients.count == 1)
-        #expect(recipe.sortedIngredients[0].name == "Carrot")
+        #expect(recipe.sortedIngredients[0].name == "Dragonfruit")
         #expect(recipe.sortedIngredients[0].grams == 0)
         #expect(recipe.sortedIngredients[0].energyPer100g == 0)
         #expect(recipe.steps == ["Boil.", "Serve."])
@@ -72,8 +111,8 @@ struct RecipeMappingTests {
     func nutritionIsDerived() {
         let recipe = Recipe(generated: .sample)
 
-        // 300 g chicken, 120 g rice, 200 g broccoli, 15 g oil, over 2 servings.
-        let expectedEnergy = (300 * 1.65 + 120 * 3.60 + 200 * 0.34 + 15 * 8.84) / 2
+        // 300 g chicken, 120 g rice, 200 g broccoli, 15 g oil, over 2 servings, with FoodReference values.
+        let expectedEnergy = (300 * 1.20 + 120 * 3.65 + 200 * 0.34 + 15 * 8.84) / 2
         #expect(abs(recipe.nutritionPerServing.energy - expectedEnergy) < 0.001)
         #expect(recipe.servingMass == 317.5)
     }
@@ -97,9 +136,9 @@ struct RecipeMappingTests {
         let before = recipe.nutritionPerServing.energy
         let chicken = try #require(recipe.sortedIngredients.first { $0.name == "Chicken breast" })
 
-        chicken.grams += 100  // +100 g at 165 kcal per 100 g, over 2 servings
+        chicken.grams += 100  // +100 g at 120 kcal per 100 g, over 2 servings
 
-        #expect(abs(recipe.nutritionPerServing.energy - (before + 165 / 2)) < 0.0001)
+        #expect(abs(recipe.nutritionPerServing.energy - (before + 120 / 2)) < 0.0001)
         #expect(recipe.servingMass == (735.0 / 2))
     }
 
