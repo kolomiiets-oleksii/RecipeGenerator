@@ -7,6 +7,9 @@ How the numbers were produced: a Debug build runs the real `SystemLanguageModel`
 result (`[GEN]` lines on stderr). Small samples, one machine, one or two ingredient lists, so treat the differences as
 indicative, not as benchmarks. To repeat a comparison interactively, open
 `RecipeGenerator/PreviewSupport/RecipePromptPlaygrounds.swift` in Xcode 26 and run a `#Playground`.
+Choose an iPhone **simulator** as the run destination (a device older than the iPhone 15 Pro has no Apple Intelligence),
+and when Xcode asks, trust the `#Playground` macro. Until it is trusted, the build fails with only
+"Failed to build the scheme".
 
 ## What the model gets wrong
 
