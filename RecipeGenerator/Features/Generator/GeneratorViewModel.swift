@@ -54,6 +54,11 @@ final class GeneratorViewModel {
         dietaryOptions = options
     }
 
+    /// Lets the generator get the model ready while the person types.
+    func prewarm() {
+        generator.prewarm()
+    }
+
     /// Starts generation in a task the view model owns, so it can be cancelled.
     func start() {
         guard canGenerate else { return }

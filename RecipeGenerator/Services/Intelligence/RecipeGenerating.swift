@@ -10,6 +10,9 @@ protocol RecipeGenerating {
     var languageNotice: String? { get }
 
     /// Writes the recipe. `onProgress` is called as the model produces text, so the screen can show it.
+    /// Gets the model ready ahead of `generate`, so the first output comes sooner. Safe to call repeatedly.
+    func prewarm()
+
     func generate(
         from ingredients: String,
         dietary: Set<DietaryOption>,
@@ -18,6 +21,8 @@ protocol RecipeGenerating {
 }
 
 extension RecipeGenerating {
+    func prewarm() {}
+
     var languageNotice: String? { nil }
 }
 
