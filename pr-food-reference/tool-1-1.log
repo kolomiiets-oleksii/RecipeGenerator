@@ -1,0 +1,18 @@
+2026-10-28 22:35:35.136 RecipeGenerator[70825:27164429] CoreText note: Client requested name ".SFCompact", it will get TimesNewRomanPSMT rather than the intended font. All system UI font access should be through proper APIs such as CTFontCreateUIFontForLanguage() or +[UIFont systemFontOfSize:].
+2026-10-28 22:35:35.137 RecipeGenerator[70825:27164429] CoreText note: Set a breakpoint on CTFontLogSystemFontNameRequest to debug.
+IOSurfaceClientSetSurfaceNotify failed e00002c7
+[GEN] tool rice -> hit
+[GEN] tool garlic -> hit
+[GEN] tool broccoli -> hit
+[GEN] tool chicken -> hit
+[GEN] tool salt -> hit
+[GEN] tool pepper -> hit
+[GEN] tool oil -> hit
+[GEN] tool butter -> hit
+[GEN] tool lemon -> hit
+[GEN] tool water -> miss
+[GEN] tool vegetable broth -> miss
+[GEN] tool butter -> hit
+[GEN] tool butter -> hit
+[GEN] tool butter -> hit
+io.snappmobile.RecipeGenerator: 70825
